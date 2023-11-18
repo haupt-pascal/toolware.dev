@@ -23,18 +23,6 @@
             </h2>
             <a href="base64">Click here</a>
         </div>
-        <div class="container">
-            <h2>
-                spf <br> checker
-            </h2>
-            <a href="base64">Click here</a>
-        </div>
-        <div class="container">
-            <h2>
-                mailhead <br> checker
-            </h2>
-            <a href="base64">Click here</a>
-        </div>
     </div>
   </div>
 
@@ -68,6 +56,8 @@
         </div>
     </div>
   </div>
+
+  <Footer />
 </template>
 <style lang="scss">
 @import '@/assets/stylesheet/style';

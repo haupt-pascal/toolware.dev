@@ -1,0 +1,149 @@
+@import "_var.scss";
+
+* {
+  font-variant-ligatures: none;
+}
+
+body {
+  background-color: $background;
+  font-family: "Along Sans s2", sans-serif;
+  font-size: 20px;
+  color: $white;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+h1 {
+  font-size: 64px;
+  font-family: "Poppins", sans-serif;
+  width: 75%;
+  text-align: center;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  width: 75%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.navigation {
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hero {
+  width: 80%;
+  padding-top: 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.subpage {
+    padding-top: 30px;
+  }
+
+  .container-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    .container {
+      background: $secondary;
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px 10px;
+
+      h2 {
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+      }
+
+      a {
+        background: $primary;
+        color: $background;
+        padding: 10px 42px;
+        border-radius: 20px;
+        transition: 0.3s;
+
+        &:hover {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.features {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 92px;
+
+  .container-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 32px;
+    .container {
+      background: $secondary;
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px 10px;
+      text-align: center;
+
+      h3 {
+        margin: 0 auto;
+      }
+
+      a {
+        background: $primary;
+        color: $background;
+        padding: 10px 42px;
+        border-radius: 20px;
+        transition: 0.3s;
+
+        &:hover {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer-bottom {
+        a {
+            margin: 0 10px;
+        }
+    }
+}

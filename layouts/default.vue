@@ -9,19 +9,19 @@
             <h2>
                 ip <br> checker
             </h2>
-            <a href="ipchecker">Click here</a>
+            <a href="/ip-checker">Click here</a>
         </div>
         <div class="container">
             <h2>
                 base64 <br> encode
             </h2>
-            <a href="base64">Click here</a>
+            <a href="base64-encode">Click here</a>
         </div>
         <div class="container">
             <h2>
                 ssl <br> checker
             </h2>
-            <a href="base64">Click here</a>
+            <a href="ssl-checker">Click here</a>
         </div>
     </div>
   </div>

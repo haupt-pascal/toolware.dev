@@ -132,6 +132,22 @@ h3 {
   }
 }
 
+.result {
+    background: $secondary;
+    padding: 20px 32px;
+    border-radius: 20px;
+
+    h2 {
+        font-size: 28px;
+        text-align: left;
+
+        b {
+            color: $primary;
+            letter-spacing: 1px;
+        }
+    }
+}
+
 .footer {
     width: 80%;
     margin: 0 auto;

@@ -19,9 +19,21 @@
         </div>
         <div class="container">
             <h2>
+                base64 <br> decode
+            </h2>
+            <a href="ssl-checker">Click here</a>
+        </div>
+        <div class="container">
+            <h2>
                 ssl <br> checker
             </h2>
             <a href="ssl-checker">Click here</a>
+        </div>
+        <div class="container">
+            <h2>
+                redirect <br> checker
+            </h2>
+            <a href="/redirect-checker">Click here</a>
         </div>
     </div>
   </div>

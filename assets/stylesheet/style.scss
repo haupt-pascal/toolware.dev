@@ -56,6 +56,10 @@ input {
     font-family: "Along Sans s2", sans-serif;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .navigation {
   width: 80%;
   height: 100px;
@@ -230,10 +234,23 @@ input {
 @media only screen and (max-width: 1628px) {
     .hero {
         .container-row {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+@media only screen and (max-width: 1428px) {
+    .hero {
+        .container-row {
             grid-template-columns: repeat(3, 1fr);
         }
     }
 
+    .features {
+        .container-row {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 }
 
 @media only screen and (max-width: 1228px) {

@@ -7,6 +7,7 @@
         <a href="/ssl-checker">ssl-checker</a>
         <a href="/redirect-checker">redirect-checker</a>
         <a href="/spf-checker">spf-checker</a>
+        <a href="/dkim-checker">dkim-checker</a>
     </div>
 </template>
 <style lang="scss">

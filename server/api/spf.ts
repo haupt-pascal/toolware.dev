@@ -6,6 +6,10 @@ export default defineEventHandler((process) => {
     `dig txt +short ${query.url} | grep spf`
   ).toString();
 
+  if (commandOutput === "") {
+    return "No SPF record found";
+  }
+
   const cleanedOutput = commandOutput.replace(/^"|"$/g, "").replace(/\\|"|\n/g, "");
   return `${cleanedOutput}`;
 });

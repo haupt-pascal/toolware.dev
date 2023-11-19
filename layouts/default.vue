@@ -47,6 +47,13 @@
         </h2>
         <a href="/spf-checker">Click here</a>
       </div>
+      <div class="container">
+        <h2>
+          dkim <br />
+          checker
+        </h2>
+        <a href="/dkim-checker">Click here</a>
+      </div>
     </div>
   </div>
 

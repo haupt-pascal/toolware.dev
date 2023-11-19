@@ -1,6 +1,6 @@
 <template>
   <Navigation />
-  <h1>SPF Checker</h1>
+  <h1>DKIM Checker</h1>
   <div class="input-container">
     <input
       type="text"
@@ -8,13 +8,14 @@
       v-model="inputURL"
       @keyup.enter="handleEnterKey"
     />
-    <button @click="checkSPF">Check SPF</button>
+    <button @click="checkDKIM">Check DKIM</button>
     <div class="result-container">
       <h2>Result:</h2>
       <p v-if="loading">Loading...</p>
-      <p v-if="result">
-        The SPF record is:<b>{{ result }}</b>
+      <p v-if="result !== null && result !== ''">
+        The DKIM record is: <b>{{ result }}</b>
       </p>
+      <p v-else-if="result !== null && result !==''">No DKIM found for this domain</p>
     </div>
   </div>
   <Footer />
@@ -25,22 +26,22 @@ import { ref, watch } from "vue";
 
 const inputURL = ref("");
 const loading = ref(false);
-const result = ref("");
+const result = ref(null);
 
-const checkSPF = async () => {
+const checkDKIM = async () => {
   if (inputURL.value) {
     loading.value = true;
     try {
-      const response = await useFetch("/api/spf", {
+      const response = await useFetch("/api/dkim", {
         query: {
           url: inputURL.value,
         },
       });
       const data = response.data;
-      result.value = data || "No SPF record found.";
+      result.value = data || ""; // Set result to empty string if no DKIM found
     } catch (error) {
-      console.error("Error fetching SPF record:", error);
-      result.value = "Error fetching SPF record.";
+      console.error("Error fetching DKIM record:", error);
+      result.value = "Error fetching DKIM record.";
     } finally {
       loading.value = false;
     }
@@ -51,7 +52,7 @@ const checkSPF = async () => {
 
 const handleEnterKey = () => {
   if (inputURL.value.trim() !== "") {
-    checkSPF();
+    checkDKIM();
   }
 };
 

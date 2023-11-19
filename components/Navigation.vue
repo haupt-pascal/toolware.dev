@@ -6,6 +6,7 @@
         <a href="/ip-checker">ip-checker</a>
         <a href="/ssl-checker">ssl-checker</a>
         <a href="/redirect-checker">redirect-checker</a>
+        <a href="/spf-checker">spf-checker</a>
     </div>
 </template>
 <style lang="scss">

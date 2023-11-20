@@ -23,6 +23,7 @@
           <li><a href="/dkim-checker">DKIM-Checker</a></li>
           <li><a href="/dmarc-checker">DMARC-Checker</a></li>
           <li><a href="/ssl-checker">SSL-Checker</a></li>
+            <li><a href="/redirect-checker">Redirect-Checker</a></li>
           <li><a href="/whois">Whois-Online</a></li>
         </ul>
       </li>

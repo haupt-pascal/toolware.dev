@@ -12,23 +12,21 @@ const encodeBase64 = () => {
 </script>
 <template>
   <Navigation />
-  <div class="body">
-    <h1>Base64-Encoder</h1>
-    <div class="input-container">
-      <input
-        v-model="inputText"
-        type="text"
-        placeholder="Type here your base64 code"
-      />
-      <button @click="encodeBase64">Encode</button>
+  <h1>Base64-Encoder</h1>
+  <div class="input-container">
+    <input
+      v-model="inputText"
+      type="text"
+      placeholder="Type here your base64 code"
+    />
+    <button @click="encodeBase64">Encode</button>
 
-      <div class="result-container">
-        <h2>Result:</h2>
-        <p>{{ encodedResult }}</p>
-      </div>
+    <div class="result-container">
+      <h2>Result:</h2>
+      <p>{{ encodedResult }}</p>
     </div>
-    <Footer />
   </div>
+  <Footer />
 </template>
 <style lang="scss">
 @import "@/assets/stylesheet/style";

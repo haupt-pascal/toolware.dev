@@ -1,25 +1,23 @@
 <template>
   <Navigation />
-  <div class="body">
-    <h1>SPF Checker</h1>
-    <div class="input-container">
-      <input
-        type="text"
-        placeholder="Type here your domain to check - e.g. haupt.design"
-        v-model="inputURL"
-        @keyup.enter="handleEnterKey"
-      />
-      <button @click="checkSPF">Check SPF</button>
-      <div class="result-container">
-        <h2>Result:</h2>
-        <p v-if="loading">Loading...</p>
-        <p v-if="result">
-          The SPF record is:<b>{{ result }}</b>
-        </p>
-      </div>
+  <h1>SPF Checker</h1>
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Type here your domain to check - e.g. haupt.design"
+      v-model="inputURL"
+      @keyup.enter="handleEnterKey"
+    />
+    <button @click="checkSPF">Check SPF</button>
+    <div class="result-container">
+      <h2>Result:</h2>
+      <p v-if="loading">Loading...</p>
+      <p v-if="result">
+        The SPF record is:<b>{{ result }}</b>
+      </p>
     </div>
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <script setup>

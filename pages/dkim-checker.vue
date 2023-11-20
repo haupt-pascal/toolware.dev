@@ -1,28 +1,26 @@
 <template>
   <Navigation />
-  <div class="body">
-    <h1>DKIM Checker</h1>
-    <div class="input-container">
-      <input
-        type="text"
-        placeholder="Type here your domain to check - e.g. haupt.design"
-        v-model="inputURL"
-        @keyup.enter="handleEnterKey"
-      />
-      <button @click="checkDKIM">Check DKIM</button>
-      <div class="result-container">
-        <h2>Result:</h2>
-        <p v-if="loading">Loading...</p>
-        <p v-if="result !== null && result !== ''">
-          The DKIM record is: <b>{{ result }}</b>
-        </p>
-        <p v-else-if="result !== null && result !== ''">
-          No DKIM found for this domain
-        </p>
-      </div>
+  <h1>DKIM Checker</h1>
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Type here your domain to check - e.g. haupt.design"
+      v-model="inputURL"
+      @keyup.enter="handleEnterKey"
+    />
+    <button @click="checkDKIM">Check DKIM</button>
+    <div class="result-container">
+      <h2>Result:</h2>
+      <p v-if="loading">Loading...</p>
+      <p v-if="result !== null && result !== ''">
+        The DKIM record is: <b>{{ result }}</b>
+      </p>
+      <p v-else-if="result !== null && result !== ''">
+        No DKIM found for this domain
+      </p>
     </div>
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <script setup>

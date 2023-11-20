@@ -55,37 +55,128 @@ span.disclaimer {
 }
 
 button {
-    font-size: 20px;
-    font-family: "Along Sans s2", sans-serif;
-    transition: 0.3s;
+  font-size: 20px;
+  font-family: "Along Sans s2", sans-serif;
+  transition: 0.3s;
 }
 
 input {
-    font-size: 20px;
-    font-family: "Along Sans s2", sans-serif;
+  font-size: 20px;
+  font-family: "Along Sans s2", sans-serif;
 }
 
 .text-align-center {
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+
+.main-navigation {
+  margin: 2em auto;
+  width: 80%;
+}
+
+ul {
+  margin: 0; //reset
+  padding: 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    display: block;
+    list-style-type: none;
+    text-transform: lowercase;
+  }
+
+  li a {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    color: $white;
+    font-size: 18px;
+    padding: 1rem;
+  }
+
+  li a:hover {
+    color: $primary;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+nav ul ul {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  nav ul ul {
+    display: none;
+    position: absolute;
+  }
+}
+
+nav ul li:hover > ul {
+  display: block;
+  color: #fff;
+  padding-left: 2rem;
+}
+
+@media (min-width: 800px) {
+  nav ul li:hover > ul {
+    padding-left: 0;
+  }
+
+  nav ul li:hover > ul a {
+    color: #fff;
+  }
+
+  .sub-menu {
+    border: 1px solid $primary;
+    border-radius: 20px;
+    background: $background;
+    li {
+      display: flex;
+      padding-right: 2em;
+      
+      &:first-child {
+        border-radius: 20px;
+      }
+
+      &:last-child {
+        border-radius: 20px;
+      }
+    }
+
+    li:hover,
+    li a:hover {
+      color: $primary;
+    }
+  }
+
+  nav ul ul ul {
+    margin: 0 0 0 100%;
+    box-shadow: 0 0 2px rgba(218, 78, 78, 0.6);
+  }
+}
+
 .navigation {
-  width: 20vw;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-left: 48px;
-  padding-top: 48px;
-  background: $secondary;
-
-  a {
-    margin-bottom: 32px;
-  }
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .body {
@@ -113,7 +204,9 @@ input {
   .container-row {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    justify-content: space-between;
+    gap: 20px;
+    
     .container {
       background: $secondary;
       border-radius: 20px;
@@ -123,6 +216,7 @@ input {
       h2 {
         font-size: 32px;
         font-weight: 500;
+        padding: 0 28px;
         margin-bottom: 40px;
         text-transform: uppercase;
       }
@@ -179,145 +273,153 @@ input {
 }
 
 .result {
-    background: $secondary;
-    padding: 20px 32px;
-    border-radius: 20px;
+  background: $secondary;
+  padding: 20px 32px;
+  border-radius: 20px;
 
-    h2 {
-        font-size: 28px;
-        text-align: left;
+  h2 {
+    font-size: 28px;
+    text-align: left;
 
-        b {
-            color: $primary;
-            letter-spacing: 1px;
-        }
+    b {
+      color: $primary;
+      letter-spacing: 1px;
     }
+  }
 }
 
 .input-container {
+  background: $secondary;
+  padding: 32px;
+  border-radius: 20px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba($color: #fff, $alpha: 0.5);
     background: $secondary;
-    padding: 32px;
+    color: $white;
+    font-size: 20px;
+    outline: none;
+    transition: 0.3s;
+    &::placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
+
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  button {
+    background: $primary;
+    color: $background;
+    padding: 10px 42px;
     border-radius: 20px;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transition: 0.3s;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
 
-    input {
-        width: calc(100% - 40px);
-        padding: 10px 20px;
-        border-radius: 15px;
-        border: 1px solid rgba($color: #fff, $alpha: .5);
-        background: $secondary;
-        color: $white;
-        font-size: 20px;
-        outline: none;
-        transition: 0.3s;
-        &::placeholder {
-            color: $white;
-            opacity: .5;
-        }
-
-        &:focus {
-            border: 1px solid $primary;
-        }
+    &:hover {
+      font-weight: 500;
     }
+  }
 
-    button {
-        background: $primary;
-        color: $background;
-        padding: 10px 42px;
-        border-radius: 20px;
-        transition: 0.3s;
-        margin-top: 20px;
-        cursor: pointer;
-        border: none;
+  .result-container {
+    margin-top: 64px;
+    text-align: left;
 
-        &:hover {
-            font-weight: 500;
-        }
+    .result-container-result {
+      p {
+        margin: 8px 0;
+        font-family: "Popins", sans-serif;
+      }
     }
-
-    .result-container {
-        margin-top: 64px;
-    }
+  }
 }
 
 .footer {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    .footer-bottom {
-        a {
-            margin: 0 10px;
-        }
+  .footer-bottom {
+    a {
+      margin: 0 10px;
     }
+  }
 }
 
 @media only screen and (max-width: 1628px) {
-    .hero {
-        .container-row {
-            grid-template-columns: repeat(4, 1fr);
-        }
+  .hero {
+    .container-row {
+      grid-template-columns: repeat(5, 1fr);
     }
+  }
 }
 
 @media only screen and (max-width: 1428px) {
-    .hero {
-        .container-row {
-            grid-template-columns: repeat(3, 1fr);
-        }
+  .hero {
+    .container-row {
+      grid-template-columns: repeat(3, 1fr);
     }
+  }
 
-    .features {
-        .container-row {
-            grid-template-columns: repeat(3, 1fr);
-        }
+  .features {
+    .container-row {
+      grid-template-columns: repeat(3, 1fr);
     }
+  }
 }
 
 @media only screen and (max-width: 1228px) {
-    .hero {
-        .container-row {
-            grid-template-columns: repeat(2, 1fr);
-            .container {
-                width: 100%;
-            }
-        }
+  .hero {
+    .container-row {
+      grid-template-columns: repeat(2, 1fr);
+      .container {
+        width: 100%;
+      }
     }
+  }
 
-    .features {
-        .container-row {
-            grid-template-columns: repeat(2, 1fr);
-            .container {
-                width: 100%;
-            }
-        }
+  .features {
+    .container-row {
+      grid-template-columns: repeat(2, 1fr);
+      .container {
+        width: 100%;
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 728px) {
-    .hero {
-        .container-row {
-            grid-template-columns: repeat(1, 1fr);
-            .container {
-                width: 100%;
-            }
-        }
+  .hero {
+    .container-row {
+      grid-template-columns: repeat(1, 1fr);
+      .container {
+        width: 100%;
+      }
     }
+  }
 
-    .features {
-        .container-row {
-            grid-template-columns: repeat(1, 1fr);
-            .container {
-                width: 100%;
-            }
-        }
+  .features {
+    .container-row {
+      grid-template-columns: repeat(1, 1fr);
+      .container {
+        width: 100%;
+      }
     }
+  }
 }

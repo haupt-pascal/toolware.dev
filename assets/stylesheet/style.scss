@@ -25,7 +25,7 @@ a {
 h1 {
   font-size: 64px;
   font-family: "Poppins", sans-serif;
-  width: 75%;
+  width: 60%;
   text-align: center;
   font-weight: 500;
   margin-left: auto;
@@ -55,6 +55,25 @@ span.disclaimer {
   margin-bottom: 24px;
 }
 
+span.category {
+  font-size: 24px;
+  font-family: "Along Sans s2", sans-serif;
+  font-weight: 500;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+button.rounded-primary {
+  background: $primary;
+  color: $background;
+  padding: 42px;
+  border-radius: 200px;
+  transition: 0.3s;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+}
+
 button {
   font-size: 20px;
   font-family: "Along Sans s2", sans-serif;
@@ -81,7 +100,7 @@ input {
 }
 
 ul {
-  margin: 0; //reset
+  margin: 0;
   padding: 0;
 }
 
@@ -149,7 +168,7 @@ nav ul li:hover > ul {
     li {
       display: flex;
       padding-right: 2em;
-      
+
       &:first-child {
         border-radius: 20px;
       }
@@ -188,6 +207,7 @@ nav ul li:hover > ul {
 .hero {
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 48px;
   display: flex;
   flex-direction: column;
   //justify-content: center;
@@ -207,7 +227,7 @@ nav ul li:hover > ul {
     grid-template-columns: repeat(5, 1fr);
     justify-content: space-between;
     gap: 20px;
-    
+
     .container {
       background: $secondary;
       border-radius: 20px;

@@ -4,6 +4,7 @@
   <div class="hero">
     <h1>Lorem ipsum dolor set amet amen.</h1>
 
+    <span class="category"> Network Tools </span>
     <div class="container-row">
       <div class="container">
         <h2>
@@ -11,20 +12,6 @@
           checker
         </h2>
         <a href="/ip-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          base64 <br />
-          encode
-        </h2>
-        <a href="base64-encode">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          base64 <br />
-          decode
-        </h2>
-        <a href="ssl-checker">Click here</a>
       </div>
       <div class="container">
         <h2>
@@ -54,9 +41,37 @@
         </h2>
         <a href="/dkim-checker">Click here</a>
       </div>
+      <div class="container">
+        <h2>
+          dmarc <br />
+          checker
+        </h2>
+        <a href="/dmarc-checker">Click here</a>
+      </div>
     </div>
   </div>
 
+  <div class="hero">
+    <span class="category"> Encoder Tools </span>
+    <div class="container-row">
+      <div class="container">
+        <h2>
+          base64 <br />
+          encoder
+        </h2>
+        <a href="/base64-encode">Click here</a>
+      </div>
+      <div class="container">
+        <h2>
+          base64 <br />
+          decoder
+        </h2>
+        <a href="/base64-decode">Click here</a>
+      </div>
+    </div>
+  </div>
+
+  <!--
   <div class="features">
     <h2>Lorem ipsum dolor</h2>
 
@@ -75,7 +90,8 @@
       </div>
     </div>
   </div>
-
+  -->
+  
   <Footer />
 </template>
 <style lang="scss">

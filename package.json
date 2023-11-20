@@ -17,6 +17,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "fast-speedtest-api": "^0.3.2",
+    "speedtest-net": "^2.2.0"
   }
 }

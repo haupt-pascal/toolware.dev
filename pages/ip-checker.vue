@@ -36,14 +36,14 @@ onMounted(() => {
 
 <template>
   <Navigation />
-  <div class="hero subpage">
-    <h1>IP-Checker</h1>
+  <h1>IP-Checker</h1>
+  <div class="input-container">
+    <span class="disclaimer">
+      This tool uses an api-request from
+      <a href="https://www.ipify.org">ipify.org</a> to get your public IP. Ipify
+      is an completely open source tool to get your public IP address.
+    </span>
     <div class="result">
-      <span class="disclaimer">
-        This tool uses an api-request from
-        <a href="https://www.ipify.org">ipify.org</a> to get your public IP.
-        Ipify is an completely open source tool to get your public IP address.
-      </span>
       <h2>
         Your public IPv4 address: <b>{{ ipv4 }}</b>
       </h2>

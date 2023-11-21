@@ -89,7 +89,7 @@ input {
   text-align: center;
 }
 
-.along {
+p {
   font-family: "Along Sans s2", sans-serif;
 }
 
@@ -151,6 +151,7 @@ nav ul ul {
   nav ul ul {
     display: none;
     position: absolute;
+    z-index: 9999999;
   }
 }
 
@@ -198,27 +199,13 @@ nav ul li:hover > ul {
   }
 }
 
-.navigation {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.body {
-  width: 80vw;
-  margin-left: auto;
-}
-
 .hero {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
-  //justify-content: center;
+  justify-content: center;
   align-items: center;
 
   &.subpage {

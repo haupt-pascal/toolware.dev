@@ -15,6 +15,13 @@
       </div>
       <div class="container">
         <h2>
+          geoip <br />
+          checker
+        </h2>
+        <a href="/geoip-checker">Click here</a>
+      </div>
+      <div class="container">
+        <h2>
           ssl <br />
           checker
         </h2>
@@ -47,6 +54,13 @@
           checker
         </h2>
         <a href="/dmarc-checker">Click here</a>
+      </div>
+      <div class="container">
+        <h2>
+          whois <br />
+          online
+        </h2>
+        <a href="/whois">Click here</a>
       </div>
     </div>
   </div>
@@ -91,7 +105,7 @@
     </div>
   </div>
   -->
-  
+
   <Footer />
 </template>
 <style lang="scss">

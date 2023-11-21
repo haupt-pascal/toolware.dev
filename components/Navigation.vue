@@ -19,6 +19,7 @@
         <a href="#">NET-Tools</a>
         <ul class="sub-menu">
           <li><a href="/ip-checker">IP-Checker</a></li>
+          <li><a href="/geoip-checker">GeoIP-Checker</a></li>
           <li><a href="/spf-checker">SPF-Checker</a></li>
           <li><a href="/dkim-checker">DKIM-Checker</a></li>
           <li><a href="/dmarc-checker">DMARC-Checker</a></li>

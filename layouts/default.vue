@@ -2,7 +2,7 @@
   <Navigation />
 
   <div class="hero">
-    <h1>Lorem ipsum dolor set amet amen.</h1>
+    <h1><span class="primary-color">Toolware</span>: your systems wingman.</h1>
 
     <span class="category"> Network Tools </span>
     <div class="container-row">

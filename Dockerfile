@@ -14,12 +14,11 @@ RUN yarn build --standalone
 FROM ${NODE_IMAGE}
 
 RUN apk update && \
-    apk add --no-cache bind-tools
+    apk add --no-cache bind-tools curl
 
 WORKDIR /usr/src/tlwr/nuxt
 
 COPY --from=dependencies /usr/src/tlwr/nuxt/.output ./.output
-#COPY ./CHANGELOG.md ./CHANGELOG.md
 
 ENV NUXT_HOST=0.0.0.0
 

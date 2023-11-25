@@ -4,6 +4,8 @@ FROM $NODE_IMAGE as dependencies
 
 # to resolve node gyp error on alpine when installing with the --production flag
 #RUN apk add g++ make py3-pip
+RUN apk add curl
+RUN apk add --update bind-tools
 
 RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt

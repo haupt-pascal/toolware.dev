@@ -35,7 +35,7 @@
           <li><a href="/base64-decode">base64-decoder</a></li>
         </ul>
       </li>
-      <li><a href="#">Placeholder</a></li>
+      <!-- <li><a href="#">Coming Soon</a></li> -->
     </ul>
   </nav>
 </template>

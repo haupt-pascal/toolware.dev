@@ -98,6 +98,58 @@ p {
   font-family: "Along Sans s2", sans-serif;
 }
 
+@media only screen and (max-width: 520px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  span.disclaimer {
+    font-size: 12px;
+  }
+
+  span.category {
+    font-size: 20px;
+  }
+
+  button.rounded-primary {
+    padding: 32px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  span.disclaimer {
+    font-size: 12px;
+  }
+
+  span.category {
+    font-size: 20px;
+  }
+
+  button.rounded-primary {
+    padding: 32px;
+  }
+}
+
 * {
   box-sizing: border-box;
   font-family: "Dosis", sans-serif;

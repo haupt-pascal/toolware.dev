@@ -1,11 +1,16 @@
-ARG NODE_IMAGE=node:18-alpine3.17
+#ARG NODE_IMAGE=node:18-alpine3.17
+ARG NODE_IMAGE=node:18.4.0-bullseye-slim
 
 FROM $NODE_IMAGE as dependencies
 
 # to resolve node gyp error on alpine when installing with the --production flag
 #RUN apk add g++ make py3-pip
-RUN apk add curl
-RUN apk add --update bind-tools
+#RUN apk add curl
+#RUN apk add --update bind-tools
+
+RUN apt-get install -y curl
+RUN apt-get install -y build-essential
+RUN apt-get install -y dnsutils
 
 RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt

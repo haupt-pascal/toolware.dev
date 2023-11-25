@@ -1,4 +1,5 @@
-ARG NODE_IMAGE=node:18-alpine3.17
+#ARG NODE_IMAGE=node:18-alpine3.17
+ARG NODE_IMAGE=node:20.4.0
 #ARG NODE_IMAGE=node:18.4.0-bullseye-slim
 
 FROM $NODE_IMAGE as dependencies
@@ -8,9 +9,8 @@ FROM $NODE_IMAGE as dependencies
 #RUN apk add curl
 #RUN apk add
 
-# I want to install curl, dig, whois, dnslookup etc. for the alpine image
-RUN apk update && \
-    apk add --no-cache bind-tools curl
+# Install dnsutils, whois, and curl
+RUN apt-get update && apt-get install -y dnsutils whois curl
 
 RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt

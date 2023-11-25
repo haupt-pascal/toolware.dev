@@ -6,11 +6,10 @@ FROM $NODE_IMAGE as dependencies
 # to resolve node gyp error on alpine when installing with the --production flag
 #RUN apk add g++ make py3-pip
 #RUN apk add curl
-#RUN apk add --update bind-tools
+#RUN apk add
 
-RUN apt-get install -y curl
-RUN apt-get install -y build-essential
-RUN apt-get install -y dnsutils
+# I want to install curl, dig, whois, dnslookup etc.
+RUN apt-get update && apt-get install -y curl dnsutils whois
 
 RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt

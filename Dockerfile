@@ -14,7 +14,7 @@ RUN yarn build --standalone
 FROM ${NODE_IMAGE}
 
 RUN apk update && \
-    apk add --no-cache bind-tools curl
+    apk add --no-cache bind-tools curl whois
 
 WORKDIR /usr/src/tlwr/nuxt
 

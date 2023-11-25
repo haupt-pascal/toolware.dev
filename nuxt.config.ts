@@ -12,4 +12,5 @@ export default ({
   },
 
   plugins: [{ src: "./plugins/super-matomo-plugin.client.js", ssr: false }],
+  serverMiddleware: [{ path: "/api/curl", handler: "~/server/api/curl.ts" }],
 });

@@ -10,7 +10,7 @@ FROM $NODE_IMAGE as dependencies
 
 # I want to install curl, dig, whois, dnslookup etc. for the alpine image
 RUN apk update && \
-    apk add --no-cache bind-tools curl dnsutils
+    apk add --no-cache bind-tools curl
 
 RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt

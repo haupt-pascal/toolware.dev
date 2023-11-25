@@ -22,8 +22,7 @@ COPY --from=dependencies /usr/src/tlwr/nuxt/.output ./.output
 #COPY ./CHANGELOG.md ./CHANGELOG.md
 
 ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3005
 
-EXPOSE 3005
+EXPOSE 3000
 
 ENTRYPOINT ["node", ".output/server/index.mjs"]

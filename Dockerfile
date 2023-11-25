@@ -19,7 +19,7 @@ FROM ${NODE_IMAGE}
 WORKDIR /usr/src/tlwr/nuxt
 
 COPY --from=dependencies /usr/src/tlwr/nuxt/.output ./.output
-COPY ./CHANGELOG.md ./CHANGELOG.md
+#COPY ./CHANGELOG.md ./CHANGELOG.md
 
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3005

@@ -20,37 +20,37 @@ const networkNavbarItems = ref <networkNavbarItem[]> ([
     link: '/ip-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:map-pin',
     title: 'GeoIP-Checker',
     link: '/geoip-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:key',
     title: 'SPF-Checker',
     link: '/spf-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:key',
     title: 'DKIM-Checker',
     link: '/dkim-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:key',
     title: 'DMARC-Checker',
     link: '/dmarc-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:user-switch',
     title: 'Redirect-Checker',
     link: '/redirect-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:key',
     title: 'SSL-Checker',
     link: '/ssl-checker'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:question',
     title: 'Whois-Online',
     link: '/whois'
   }
@@ -58,12 +58,12 @@ const networkNavbarItems = ref <networkNavbarItem[]> ([
 
 const encoderNavbarItems = ref <encoderNavbarItem[]> ([
   {
-    icon: 'ph:address-book',
+    icon: 'ph:key',
     title: 'Base64-Encoder',
     link: '/base64-encode'
   },
   {
-    icon: 'ph:address-book',
+    icon: 'ph:key',
     title: 'Base64-Decoder',
     link: '/base64-decode'
   }

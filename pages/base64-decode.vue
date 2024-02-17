@@ -15,22 +15,24 @@ const decodeBase64 = () => {
 };
 </script>
 <template>
-  <Navigation />
-  <h1>Base64-Decoder</h1>
-  <div class="input-container">
-    <input
-      v-model="inputText"
-      type="text"
-      placeholder="Type here your base64 code"
-    />
-    <button @click="decodeBase64">Decode</button>
+  <div class="app">
+    <Navigation />
+    <h1>Base64-Decoder</h1>
+    <div class="input-container">
+      <input
+        v-model="inputText"
+        type="text"
+        placeholder="Type here your base64 code"
+      />
+      <button @click="decodeBase64">Decode</button>
 
-    <div class="result-container">
-      <h2>Result:</h2>
-      <p>{{ decodedResult }}</p>
+      <div class="result-container">
+        <h2>Result:</h2>
+        <p>{{ decodedResult }}</p>
+      </div>
     </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 <style lang="scss">
 @import "@/assets/stylesheet/style";

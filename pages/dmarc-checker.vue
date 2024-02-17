@@ -1,26 +1,28 @@
 <template>
-  <Navigation />
-  <h1>DMARC Checker</h1>
-  <div class="input-container">
-    <input
-      type="text"
-      placeholder="Type here your domain to check - e.g. haupt.design"
-      v-model="inputURL"
-      @keyup.enter="handleEnterKey"
-    />
-    <button @click="checkDKIM">Check DMARC</button>
-    <div class="result-container">
-      <h2>Result:</h2>
-      <p v-if="loading">Loading...</p>
-      <p v-if="result !== null && result !== ''">
-        The DMARC record is: <b>{{ result }}</b>
-      </p>
-      <p v-else-if="result !== null && result !== ''">
-        No DMARC found for this domain
-      </p>
+  <div class="app">
+    <Navigation />
+    <h1>DMARC Checker</h1>
+    <div class="input-container">
+      <input
+        type="text"
+        placeholder="Type here your domain to check - e.g. haupt.design"
+        v-model="inputURL"
+        @keyup.enter="handleEnterKey"
+      />
+      <button @click="checkDKIM">Check DMARC</button>
+      <div class="result-container">
+        <h2>Result:</h2>
+        <p v-if="loading">Loading...</p>
+        <p v-if="result !== null && result !== ''">
+          The DMARC record is: <b>{{ result }}</b>
+        </p>
+        <p v-else-if="result !== null && result !== ''">
+          No DMARC found for this domain
+        </p>
+      </div>
     </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script setup>

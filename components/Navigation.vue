@@ -1,42 +1,101 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+type networkNavbarItem = {
+  icon: string;
+  title: string;
+  link: string;
+}
+
+type encoderNavbarItem = {
+  icon: string;
+  title: string;
+  link: string;
+}
+
+const networkNavbarItems = ref <networkNavbarItem[]> ([
+  {
+    icon: 'ph:address-book',
+    title: 'IP-Checker',
+    link: '/ip-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'GeoIP-Checker',
+    link: '/geoip-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'SPF-Checker',
+    link: '/spf-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'DKIM-Checker',
+    link: '/dkim-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'DMARC-Checker',
+    link: '/dmarc-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'Redirect-Checker',
+    link: '/redirect-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'SSL-Checker',
+    link: '/ssl-checker'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'Whois-Online',
+    link: '/whois'
+  }
+]);
+
+const encoderNavbarItems = ref <encoderNavbarItem[]> ([
+  {
+    icon: 'ph:address-book',
+    title: 'Base64-Encoder',
+    link: '/base64-encode'
+  },
+  {
+    icon: 'ph:address-book',
+    title: 'Base64-Decoder',
+    link: '/base64-decode'
+  }
+]);
+
+
+</script>
 <template>
-  <!--
-    <div class="navigation">
-        <a href="/">home</a>
-        <a href="/base64-encode">base64-encode</a>
-        <a href="/base64-decode">base64-decode</a>
-        <a href="/ip-checker">ip-checker</a>
-        <a href="/ssl-checker">ssl-checker</a>
-        <a href="/redirect-checker">redirect-checker</a>
-        <a href="/spf-checker">spf-checker</a>
-        <a href="/dkim-checker">dkim-checker</a>
-        <a href="/whois">whois-online</a>
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <img src="" alt="" />
     </div>
-    -->
-  <nav class="main-navigation">
-    <ul class="menu">
-      <li><a href="/">Home</a></li>
-      <li class="menu-item-has-children">
-        <a href="#">NET-Tools</a>
-        <ul class="sub-menu">
-          <li><a href="/ip-checker">IP-Checker</a></li>
-          <li><a href="/geoip-checker">GeoIP-Checker</a></li>
-          <li><a href="/spf-checker">SPF-Checker</a></li>
-          <li><a href="/dkim-checker">DKIM-Checker</a></li>
-          <li><a href="/dmarc-checker">DMARC-Checker</a></li>
-          <li><a href="/redirect-checker">Redirect-Checker</a></li>
-          <li><a href="/ssl-checker">SSL-Checker</a></li>
-          <li><a href="/whois">Whois-Online</a></li>
+    <div class="sidebar-menu">
+      <div class="sidebar-menu-category">
+        <span class="sidebar-menu-category-title"> network </span>
+        <ul class="sidebar-menu-list">
+          <li class="sidebar-menu-item" v-for="item in networkNavbarItems" :key="item.title">
+            <Icon :name="item.icon" color="white" />
+            <a :href="item.link">{{ item.title }}</a>
+          </li>
         </ul>
-      </li>
-      <li class="menu-item-has-children">
-        <a href="#">encoder-tools</a>
-        <ul class="sub-menu">
-          <li><a href="/base64-encode">base64-encoder</a></li>
-          <li><a href="/base64-decode">base64-decoder</a></li>
+      </div>
+      <div class="sidebar-menu-category">
+        <span class="sidebar-menu-category-title"> encoder </span>
+        <ul class="sidebar-menu-list">
+          <li class="sidebar-menu-item" v-for="item in encoderNavbarItems" :key="item.title">
+            <Icon :name="item.icon" color="white" />
+            <a :href="item.link">{{ item.title }}</a>
+          </li>
         </ul>
-      </li>
-      <!-- <li><a href="#">Coming Soon</a></li> -->
-    </ul>
+      </div>
+    </div>
   </nav>
 </template>
 <style lang="scss">

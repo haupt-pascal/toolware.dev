@@ -1,6 +1,7 @@
 <template>
-  <Navigation />
-  <h1>Whois Online</h1>
+  <div class="app">
+    <Navigation />
+    <h1>Whois Online</h1>
     <div class="input-container">
       <input
         type="text"
@@ -21,6 +22,7 @@
       </div>
     </div>
     <Footer />
+  </div>
 </template>
 
 <script setup>

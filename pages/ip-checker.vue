@@ -35,24 +35,26 @@ onMounted(() => {
 </script>
 
 <template>
-  <Navigation />
-  <h1>IP-Checker</h1>
-  <div class="input-container">
-    <span class="disclaimer">
-      This tool uses an api-request from
-      <a href="https://www.ipify.org">ipify.org</a> to get your public IP. Ipify
-      is an completely open source tool to get your public IP address.
-    </span>
-    <div class="result">
-      <h2>
-        Your public IPv4 address: <b>{{ ipv4 }}</b>
-      </h2>
-      <h2>
-        Your public IPv6 address: <b>{{ ipv6 }}</b>
-      </h2>
+  <div class="app">
+    <Navigation />
+    <h1>IP-Checker</h1>
+    <div class="input-container">
+      <span class="disclaimer">
+        This tool uses an api-request from
+        <a href="https://www.ipify.org">ipify.org</a> to get your public IP.
+        Ipify is an completely open source tool to get your public IP address.
+      </span>
+      <div class="result">
+        <h2>
+          Your public IPv4 address: <b>{{ ipv4 }}</b>
+        </h2>
+        <h2>
+          Your public IPv6 address: <b>{{ ipv6 }}</b>
+        </h2>
+      </div>
     </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <style lang="scss">

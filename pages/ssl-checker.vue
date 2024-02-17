@@ -1,34 +1,36 @@
 <template>
-  <Navigation />
-  <h1>SSL-Checker</h1>
-  <div class="input-container">
-    <span class="disclaimer">
-      This tool checks the SSL certificate of the given domain. It uses the
-      <a href="https://certspotter.com/" target="_blank">Cert Spotter API</a>
-      to check the certificate.
-    </span>
-    <input
-      v-model="websiteURL"
-      type="text"
-      placeholder="Type here your domain to check - e.g. haupt.design"
-      @keydown.enter="clearAndCheckSSL"
-    />
-    <button @click="clearAndCheckSSL">Check</button>
+  <div class="app">
+    <Navigation />
+    <h1>SSL-Checker</h1>
+    <div class="input-container">
+      <span class="disclaimer">
+        This tool checks the SSL certificate of the given domain. It uses the
+        <a href="https://certspotter.com/" target="_blank">Cert Spotter API</a>
+        to check the certificate.
+      </span>
+      <input
+        v-model="websiteURL"
+        type="text"
+        placeholder="Type here your domain to check - e.g. haupt.design"
+        @keydown.enter="clearAndCheckSSL"
+      />
+      <button @click="clearAndCheckSSL">Check</button>
 
-    <div class="result-container">
-      <h2>Result:</h2>
-      <p v-if="!loading">{{ sslStatus }}</p>
-      <div v-if="validFrom && validUntil && !loading">
-        <p>Valid from: {{ validFrom }}</p>
-        <p>Valid until: {{ validUntil }}</p>
-      </div>
-      <div v-if="loading">
-        <p>Loading...</p>
-        <!-- Hier kannst du eine Ladebalken-Komponente einfügen -->
+      <div class="result-container">
+        <h2>Result:</h2>
+        <p v-if="!loading">{{ sslStatus }}</p>
+        <div v-if="validFrom && validUntil && !loading">
+          <p>Valid from: {{ validFrom }}</p>
+          <p>Valid until: {{ validUntil }}</p>
+        </div>
+        <div v-if="loading">
+          <p>Loading...</p>
+          <!-- Hier kannst du eine Ladebalken-Komponente einfügen -->
+        </div>
       </div>
     </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script setup lang="ts">

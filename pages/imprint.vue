@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="app">
         <Navigation />
         <div class="legal">
             <h1>Impressum</h1>

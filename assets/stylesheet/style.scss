@@ -1,4 +1,10 @@
+/* Import Section
+***************************************/
+
 @import "_var.scss";
+
+/* Variables Section
+***************************************/
 
 * {
   font-variant-ligatures: none;
@@ -6,7 +12,7 @@
 
 body {
   background-color: $background;
-  font-family: "Along Sans s2", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
   color: $white;
 }
@@ -15,11 +21,15 @@ a {
   text-decoration: none;
   color: $white;
   cursor: pointer;
-  font-family: "Along Sans s2", sans-serif;
+  font-family: "Poppins", sans-serif;
 
   &:hover {
     color: $primary;
   }
+}
+
+li {
+  list-style: none;
 }
 
 h1 {
@@ -98,6 +108,9 @@ p {
   font-family: "Along Sans s2", sans-serif;
 }
 
+/* Responsive Variables Section
+***************************************/
+
 @media only screen and (max-width: 520px) {
   h1 {
     font-size: 48px;
@@ -155,110 +168,91 @@ p {
   font-family: "Dosis", sans-serif;
 }
 
-.main-navigation {
-  margin: 2em auto;
-  width: 80%;
-}
+/* Navigation
+***************************************/
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-
-  li {
-    display: block;
-    list-style-type: none;
-    text-transform: lowercase;
-  }
-
-  li a {
-    display: flex;
-    text-align: center;
-    text-decoration: none;
-    color: $white;
-    font-size: 18px;
-    padding: 1rem;
-  }
-
-  li a:hover {
-    color: $primary;
-  }
-}
-
-@media (min-width: 800px) {
-  .menu {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-nav ul ul {
-  display: none;
-}
-
-@media (min-width: 800px) {
-  nav ul ul {
-    display: none;
-    position: absolute;
-    z-index: 9999999;
-  }
-}
-
-nav ul li:hover > ul {
-  display: block;
-  color: #fff;
-  padding-left: 2rem;
-}
-
-@media (min-width: 800px) {
-  nav ul li:hover > ul {
-    padding-left: 0;
-  }
-
-  nav ul li:hover > ul a {
-    color: #fff;
-  }
-
-  .sub-menu {
-    border: 1px solid $primary;
-    border-radius: 20px;
-    background: $background;
-    li {
-      display: flex;
-      padding-right: 2em;
-
-      &:first-child {
-        border-radius: 20px;
-      }
-
-      &:last-child {
-        border-radius: 20px;
-      }
-    }
-
-    li:hover,
-    li a:hover {
-      color: $primary;
+.sidebar {
+  width: 20%;
+  height: calc(100vh - 20px);
+  //background: rgb(31,31,36);
+  //background: linear-gradient(352deg, rgba(31,31,36,1) 0%, rgba(51,52,57,1) 100%); 
+  background-image: linear-gradient(
+    30deg,
+    hsl(240deg 7% 13%) 0%,
+    hsl(239deg 7% 14%) 13%,
+    hsl(239deg 7% 14%) 19%,
+    hsl(238deg 7% 14%) 24%,
+    hsl(238deg 7% 15%) 28%,
+    hsl(237deg 7% 15%) 32%,
+    hsl(237deg 7% 15%) 35%,
+    hsl(236deg 7% 16%) 39%,
+    hsl(236deg 7% 16%) 42%,
+    hsl(235deg 6% 17%) 45%,
+    hsl(235deg 6% 17%) 48%,
+    hsl(234deg 6% 17%) 52%,
+    hsl(234deg 6% 18%) 55%,
+    hsl(233deg 6% 18%) 58%,
+    hsl(233deg 6% 18%) 61%,
+    hsl(233deg 6% 19%) 65%,
+    hsl(232deg 6% 19%) 68%,
+    hsl(232deg 6% 20%) 72%,
+    hsl(231deg 6% 20%) 76%,
+    hsl(231deg 6% 20%) 81%,
+    hsl(230deg 6% 21%) 87%,
+    hsl(230deg 6% 21%) 100%
+  );
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 33px 11px rgba(0,0,0,0.1);
+  
+  .sidebar-logo {
+    img {
     }
   }
+  .sidebar-menu {
+    .sidebar-menu-category {
+      .sidebar-menu-category-title {
+        font-size: 18px;
+        font-weight: 500;
+        opacity: .75;
+        margin-left: 28px;
+        font-family: "Along Sans s2", sans-serif;
+        
+      }
+      .sidebar-menu-list {
+        margin-top: 16px;
+        li {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          a {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: .4px;
+            transition: .3s;
+            margin-left: 12px;
 
-  nav ul ul ul {
-    margin: 0 0 0 100%;
-    box-shadow: 0 0 2px rgba(218, 78, 78, 0.6);
+            &:hover {
+              opacity: 1;
+            }
+          }
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
   }
 }
+
+/* Hero Section
+***************************************/
 
 .hero {
   width: 80%;
-  margin: 0 auto;
+  margin-left: auto;
   margin-bottom: 48px;
   display: flex;
   flex-direction: column;
@@ -276,8 +270,7 @@ nav ul li:hover > ul {
 
   .container-row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: space-between;
+    grid-template-columns: repeat(10, 1fr);
     gap: 20px;
 
     .container {
@@ -361,6 +354,12 @@ nav ul li:hover > ul {
   }
 }
 
+div.app {
+  width: 80%;
+  margin-left: auto;
+  margin-top: 64px;
+}
+
 .input-container {
   background: $secondary;
   padding: 32px;
@@ -399,7 +398,7 @@ nav ul li:hover > ul {
     .divider {
       width: 100%;
       height: 1px;
-      background: rgba($color: $white, $alpha: .1);
+      background: rgba($color: $white, $alpha: 0.1);
       margin: 0;
     }
   }
@@ -446,15 +445,15 @@ nav ul li:hover > ul {
     .result-container-result {
       p {
         margin: 8px 0;
-        font-family: "Popins", sans-serif;
+        font-family: "Poppins", sans-serif;
       }
     }
   }
 }
 
 .footer {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin-left: auto;
   margin-top: 200px;
   display: flex;
   flex-direction: column;
@@ -472,10 +471,21 @@ nav ul li:hover > ul {
   }
 }
 
-@media only screen and (max-width: 1628px) {
+/* Responsive Section
+***************************************/
+
+@media only screen and (min-width: 1928px) {
   .hero {
     .container-row {
       grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+
+@media only screen and (max-width: 1628px) {
+  .hero {
+    .container-row {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

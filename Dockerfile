@@ -16,7 +16,7 @@ RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt
 COPY . .
 
-RUN npx browserslist@latest --update-db
+RUN npx update-browserslist-db@latest
 RUN yarn install --frozen-lockfile
 RUN yarn build --standalone
 

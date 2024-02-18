@@ -2886,6 +2886,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"child_process@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "child_process@npm:1.0.2"
+  checksum: 10c0/6e45dff224c704dc5c5edc14532e6c0c5c23a7c5f823574349246082d94a29780a68a46155d8a6989ffa986cb12ed0b01fbfc6c713b6655959fabb6b8cd52e4a
+  languageName: node
+  linkType: hard
+
 "chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.5.1, chokidar@npm:^3.5.3":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
@@ -5783,6 +5790,7 @@ __metadata:
   dependencies:
     "@nuxt/devtools": "npm:latest"
     axios: "npm:^1.6.2"
+    child_process: "npm:^1.0.2"
     nuxt: "npm:^3.8.1"
     nuxt-icon: "npm:^0.6.8"
     sass: "npm:^1.69.5"

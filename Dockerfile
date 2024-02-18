@@ -17,7 +17,8 @@ WORKDIR /usr/src/tlwr/nuxt
 COPY . .
 
 #RUN npx update-browserslist-db@latest
-RUN yarn install --frozen-lockfile
+#RUN yarn install --frozen-lockfile
+RUN yarn install
 RUN yarn upgrade -R caniuse-lite
 RUN yarn build --standalone
 

@@ -3,13 +3,18 @@ ARG NODE_IMAGE=node:18-alpine3.17
 
 FROM $NODE_IMAGE as dependencies
 
+#RUN apk update && apk add --no-cache bind-tools curl
+#RUN apk add g++ make py3-pip
+
+RUN apk update
+RUN apk add --no-cache bash
+RUN apk add --no-cache bind-tools
+RUN apk add --no-cache curl
 
 RUN mkdir -p /usr/src/tlwr/nuxt
 WORKDIR /usr/src/tlwr/nuxt
 COPY . .
 
-RUN apk update && apk add --no-cache bind-tools curl
-RUN apk add g++ make py3-pip
 
 #RUN npx update-browserslist-db@latest
 #RUN yarn install --frozen-lockfile

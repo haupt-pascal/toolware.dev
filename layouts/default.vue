@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { networkNavbarItems, encoderNavbarItems } from '@/server/navigation'
+
+</script>
 <template>
   <Navigation />
 
@@ -6,61 +11,11 @@
 
     <span class="category"> Network Tools </span>
     <div class="container-row">
-      <div class="container">
+      <div class="container" v-for="item in networkNavbarItems" :key="item.title">
         <h2>
-          ip <br />
-          checker
+          {{ item.title }}
         </h2>
-        <a href="/ip-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          geoip <br />
-          checker
-        </h2>
-        <a href="/geoip-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          ssl <br />
-          checker
-        </h2>
-        <a href="ssl-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          redirect <br />
-          checker
-        </h2>
-        <a href="/redirect-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          spf <br />
-          checker
-        </h2>
-        <a href="/spf-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          dkim <br />
-          checker
-        </h2>
-        <a href="/dkim-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          dmarc <br />
-          checker
-        </h2>
-        <a href="/dmarc-checker">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          whois <br />
-          online
-        </h2>
-        <a href="/whois">Click here</a>
+        <a :href="item.link">Click here</a>
       </div>
     </div>
   </div>
@@ -68,19 +23,11 @@
   <div class="hero">
     <span class="category"> Encoder Tools </span>
     <div class="container-row">
-      <div class="container">
+      <div class="container" v-for="item in encoderNavbarItems" :key="item.title">
         <h2>
-          base64 <br />
-          encoder
+          {{ item.title }}
         </h2>
-        <a href="/base64-encode">Click here</a>
-      </div>
-      <div class="container">
-        <h2>
-          base64 <br />
-          decoder
-        </h2>
-        <a href="/base64-decode">Click here</a>
+        <a :href="item.link">Click here</a>
       </div>
     </div>
   </div>

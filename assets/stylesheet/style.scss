@@ -317,6 +317,10 @@ p {
     .container {
       background: $secondary;
       border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 20px 10px;
 
@@ -517,10 +521,28 @@ div.app {
 ***************************************/
 
 @media only screen and (min-width: 1928px) {
+  .sidebar {
+    width: 10%;
+  }
   .hero {
-    .container-row {
-      grid-template-columns: repeat(5, 1fr);
+    width: 90%;
+    padding: 0 5vw;
+    h1 {
+      font-size: 72px;
+      width: 30%;
     }
+    .container-row {
+      grid-template-columns: repeat(10, 1fr);
+
+      .container {
+        h2 {
+          width: 80%;
+        }
+      }
+    }
+  }
+  div.app {
+    width: 90%;
   }
 }
 

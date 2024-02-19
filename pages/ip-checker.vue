@@ -22,7 +22,11 @@ async function fetchIPv6() {
     const data = await response.json();
     const { ip } = data;
 
-    ipv6.value = `${ip}`;
+    if (ip.includes(".")) {
+      ipv6.value = "No IPv6 address found";
+    } else {
+      ipv6.value = `${ip}`;
+    }
   } catch (error) {
     console.error("Error while accessing your IPv6 address", error);
   }

@@ -108,6 +108,26 @@ p {
   font-family: "Poppins", sans-serif;
 }
 
+.button-container {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .button-container-button {
+    background: none;
+    border: 1px solid $secondary;
+    padding: 6px 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 0 6px;
+    &:hover {
+      border: 1px solid $primary;
+      color: $white;
+    }
+  }
+}
+
 /* Responsive Variables Section
 ***************************************/
 
@@ -406,7 +426,7 @@ div.app {
 }
 
 .input-container {
-  background: $secondary;
+  //background: $secondary;
   padding: 32px;
   border-radius: 20px;
   width: 80%;
@@ -415,7 +435,7 @@ div.app {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 10px 33px 11px rgba(0,0,0,0.1);
+  //box-shadow: 0px 10px 33px 11px rgba(0,0,0,0.1);
 
   &.info-container {
     margin-top: 64px;
@@ -488,6 +508,23 @@ div.app {
     margin-top: 64px;
     text-align: left;
 
+    .result {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      border-radius: 15px;
+      background: $secondary;
+      color: $white;
+      font-size: 20px;
+      outline: none;
+      transition: 0.3s;
+      resize: none;
+    }
+
     .result-container-result {
       p {
         margin: 8px 0;
@@ -548,6 +585,7 @@ div.app {
 
 @media only screen and (max-width: 1628px) {
   .hero {
+    padding: 0 5vw;
     .container-row {
       grid-template-columns: repeat(4, 1fr);
     }

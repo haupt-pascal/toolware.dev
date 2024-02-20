@@ -12,46 +12,75 @@ type encoderNavbarItem = {
   link: string;
 };
 
+type generatorNavbarItem = {
+  icon: string;
+  title: string;
+  link: string;
+};
+
+const generatorNavbarItems = ref<generatorNavbarItem[]>([
+  {
+    icon: "ph:exam",
+    title: "Lorem-Ipsum",
+    link: "/generator/lorem-ipsum",
+  },
+  {
+    icon: "ph:key",
+    title: "Password-Gen",
+    link: "/generator/password-generator",
+  },
+  {
+    icon: "ph:file",
+    title: "UUID-Gen",
+    link: "/generator/uuid-generator",
+  },
+  {
+    icon: "ph:file",
+    title: "Random-Port-Gen",
+    link: "/generator/random-port-generator",
+  },
+]);
+
 const networkNavbarItems = ref<networkNavbarItem[]>([
   {
     icon: "ph:address-book",
     title: "IP-Checker",
-    link: "/ip-checker",
+    link: "/network/ip-checker",
   },
   {
     icon: "ph:map-pin",
     title: "GeoIP-Checker",
-    link: "/geoip-checker",
+    link: "/network/geoip-checker",
   },
   {
     icon: "ph:key",
     title: "SPF-Checker",
-    link: "/spf-checker",
+    link: "/network/spf-checker",
   },
   {
     icon: "ph:key",
     title: "DKIM-Checker",
-    link: "/dkim-checker",
+    link: "/network/dkim-checker",
   },
   {
     icon: "ph:key",
     title: "DMARC-Checker",
-    link: "/dmarc-checker",
+    link: "/network/dmarc-checker",
   },
   {
     icon: "ph:user-switch",
     title: "Redirect-Checker",
-    link: "/redirect-checker",
+    link: "/network/redirect-checker",
   },
   {
     icon: "ph:key",
     title: "SSL-Checker",
-    link: "/ssl-checker",
+    link: "/network/ssl-checker",
   },
   {
     icon: "ph:question",
     title: "Online Ping",
-    link: "/online-ping",
+    link: "/network/online-ping",
   }
 ]);
 
@@ -59,13 +88,13 @@ const encoderNavbarItems = ref<encoderNavbarItem[]>([
   {
     icon: "ph:key",
     title: "Base64-Encoder",
-    link: "/base64-encode",
+    link: "/encoder/base64-encode",
   },
   {
     icon: "ph:key",
     title: "Base64-Decoder",
-    link: "/base64-decode",
+    link: "/encoder/base64-decode",
   },
 ]);
 
-export { networkNavbarItems, encoderNavbarItems };
+export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems };

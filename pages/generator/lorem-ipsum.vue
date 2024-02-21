@@ -53,7 +53,9 @@ const refreshValue = (value: string) => {
       <div class="result-container" v-if="ipsum !== null && ipsum !== ''">
         <h2>Result:</h2>
         <div class="result">
-          {{ ipsum }}
+          <span>
+            {{ ipsum }}
+          </span>
         </div>
         <div class="button-container">
           <a class="button-container-button" @click="copyToClipboard(ipsum)">Copy</a>

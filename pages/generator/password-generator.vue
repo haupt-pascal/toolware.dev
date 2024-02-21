@@ -3,11 +3,19 @@ import { ref } from "vue";
 
 const passwordLength = ref(8);
 const password = ref("");
+const includeUppercase = ref(true);
+const includeLowercase = ref(true);
+const includeNumbers = ref(true);
+const includeSymbols = ref(true);
 
 const generatePassword = () => {
   try {
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!§$%&/()=?#+*~";
+    let characters = "";
+    if (includeUppercase.value) characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (includeLowercase.value) characters += "abcdefghijklmnopqrstuvwxyz";
+    if (includeNumbers.value) characters += "0123456789";
+    if (includeSymbols.value) characters += "!§$%&/()=?#+*~";
+
     let result = "";
     for (let i = 0; i < passwordLength.value; i++) {
       result += characters.charAt(
@@ -38,6 +46,24 @@ const refreshValue = (value: string) => {
     <Navigation />
     <h1>Password Generator</h1>
     <div class="input-container">
+      <div class="options-container">
+        <label>
+          <input type="checkbox" v-model="includeUppercase" />
+          Include Uppercase
+        </label>
+        <label>
+          <input type="checkbox" v-model="includeLowercase" />
+          Include Lowercase
+        </label>
+        <label>
+          <input type="checkbox" v-model="includeNumbers" />
+          Include Numbers
+        </label>
+        <label>
+          <input type="checkbox" v-model="includeSymbols" />
+          Include Symbols
+        </label>
+      </div>
       <input
         type="number"
         max="100"
@@ -49,11 +75,17 @@ const refreshValue = (value: string) => {
       <div class="result-container" v-if="password !== null && password !== ''">
         <h2>Result:</h2>
         <div class="result">
-          {{ password }}
+          <span>
+            {{ password }}
+          </span>
         </div>
         <div class="button-container">
-          <a class="button-container-button" @click="copyToClipboard(password)">Copy</a>
-            <a class="button-container-button" @click="refreshValue(password)">Refresh</a>
+          <a class="button-container-button" @click="copyToClipboard(password)"
+            >Copy</a
+          >
+          <a class="button-container-button" @click="refreshValue(password)"
+            >Refresh</a
+          >
         </div>
       </div>
     </div>

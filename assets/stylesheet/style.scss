@@ -258,6 +258,54 @@ p {
 /* Navigation
 ***************************************/
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10% 64px 10%;
+  margin: 0 auto;
+  .navbar-left {
+    width: 60%;
+  }
+  .navbar-right {
+    width: 40%;
+    .navbar-right-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        margin: 0 10px;
+      }
+      .navbar-right-icons-button {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary;
+        color: $background;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: 0.3s;
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    .navbar-right {
+      .navbar-right-icons {
+        .navbar-right-icons-button {
+          display: none;
+        }
+      }
+    }
+  }
+} 
+
 .sidebar {
   width: 20%;
   height: calc(100vh - 20px);
@@ -421,7 +469,7 @@ p {
 div.app {
   width: 80%;
   margin-left: auto;
-  margin-top: 64px;
+  margin-top: 24px;
 }
 
 .input-container {
@@ -569,7 +617,6 @@ div.app {
       font-family: "Along Sans s2", sans-serif;
     }
   }
-
   .footer-bottom {
     a {
       margin: 0 10px;

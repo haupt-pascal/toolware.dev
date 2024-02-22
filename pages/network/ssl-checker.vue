@@ -53,6 +53,7 @@ const checkSSL = async () => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>SSL-Checker</h1>
     <div class="input-container">
       <span class="disclaimer">

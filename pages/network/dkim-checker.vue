@@ -1,40 +1,11 @@
-<template>
-  <div class="app">
-    <Navigation />
-    <h1>DKIM Checker</h1>
-    <div class="input-container">
-      <input
-        type="text"
-        placeholder="Type here your domain to check - e.g. haupt.design"
-        v-model="inputURL"
-        @keyup.enter="handleEnterKey"
-      />
-      <button @click="checkDKIM">Check DKIM</button>
-      <div class="result-container">
-        <h2>Result:</h2>
-        <p v-if="loading">Loading...</p>
-        <p v-if="result !== null && result !== ''">
-          The DKIM record is: <b>{{ result }}</b>
-        </p>
-        <p v-else-if="result !== null && result !== ''">
-          No DKIM found for this domain
-        </p>
-      </div>
-    </div>
-    <Footer />
-  </div>
-</template>
-
 <script setup>
 import { ref, watch } from "vue";
 
 const inputURL = ref("");
-const loading = ref(false);
 const result = ref(null);
 
 const checkDKIM = async () => {
   if (inputURL.value) {
-    loading.value = true;
     try {
       const response = await useFetch("/api/dkim", {
         query: {
@@ -42,21 +13,11 @@ const checkDKIM = async () => {
         },
       });
       const data = response.data;
-      result.value = data || ""; // Set result to empty string if no DKIM found
+      result.value = data || "";
     } catch (error) {
       console.error("Error fetching DKIM record:", error);
       result.value = "Error fetching DKIM record.";
-    } finally {
-      loading.value = false;
     }
-  } else {
-    result.value = "Please enter a domain.";
-  }
-};
-
-const handleEnterKey = () => {
-  if (inputURL.value.trim() !== "") {
-    checkDKIM();
   }
 };
 
@@ -69,5 +30,33 @@ watch(
   }
 );
 </script>
-
-<style scoped></style>
+<template>
+  <div class="app">
+    <Navigation />
+    <h1>DKIM Checker</h1>
+    <div class="input-container">
+      <input
+        type="text"
+        placeholder="Type here your domain to check - e.g. haupt.design"
+        v-model="inputURL"
+        @keyup.enter="checkDKIM"
+      />
+      <button @click="checkDKIM">Check DKIM</button>
+      <div class="result-container" v-if="result !== '' && result !== null">
+        <h2>Result:</h2>
+        <div class="result">
+          <span v-if="result !== null && result !== ''">
+            The DKIM record is: <b>{{ result }}</b>
+          </span>
+          <span v-else-if="result !== null && result !== ''">
+            No DKIM found for this domain
+          </span>
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </div>
+</template>
+<style scoped lang="scss">
+@import "@/assets/stylesheet/style";
+</style>

@@ -1,3 +1,22 @@
+<script setup>
+import axios from "axios";
+import { ref } from "vue";
+
+const inputIP = ref("");
+const geoIP = ref({});
+
+const checkGeoIP = async () => {
+  try {
+    const response = await axios.get(`https://ipapi.co/${inputIP.value}/json/`);
+    geoIP.value = response.data;
+  } catch (error) {
+    console.error("Error fetching GeoIP information:", error);
+    geoIP.value = {};
+  }
+};
+
+console.log(geoIP.value);
+</script>
 <template>
   <div class="app">
     <Navigation />
@@ -8,46 +27,36 @@
         <a href="https://ipapi.co">ipapi.co</a> to get your public IP. Ipapi is
         an completely open source tool to get your public IP address.
       </span>
-      <input type="text" placeholder="Enter IP Address" v-model="inputIP" />
+      <input
+        type="text"
+        placeholder="Enter IP Address"
+        v-model="inputIP"
+        @keyup.enter="checkGeoIP"
+      />
       <button class="rounded-primary" @click="checkGeoIP">Check IP</button>
-      <div class="result-container">
+      <div
+        class="result-container"
+        v-if="
+          geoIP.network !== '' &&
+          geoIP.network !== null &&
+          geoIP.network !== undefined
+        "
+      >
         <h2>Result:</h2>
-        <p v-if="loading">Loading...</p>
-        <div v-else>
-          <p v-if="geoIP.network">Network: {{ geoIP.network }}</p>
-          <p v-if="geoIP.city">City: {{ geoIP.city }}</p>
-          <p v-if="geoIP.region">Region: {{ geoIP.region }}</p>
-          <p v-if="geoIP.country_name">
+        <div class="result">
+          <span v-if="geoIP.network">Network: {{ geoIP.network }}</span>
+          <span v-if="geoIP.city">City: {{ geoIP.city }}</span>
+          <span v-if="geoIP.region">Region: {{ geoIP.region }}</span>
+          <span v-if="geoIP.country_name">
             Country Name: {{ geoIP.country_name }}
-          </p>
-          <p v-if="geoIP.org">Org: {{ geoIP.org }}</p>
+          </span>
+          <span v-if="geoIP.org">Org: {{ geoIP.org }}</span>
         </div>
       </div>
     </div>
     <Footer />
   </div>
 </template>
-
-<script setup>
-import axios from "axios";
-import { ref } from "vue";
-
-const inputIP = ref("");
-const loading = ref(false);
-const geoIP = ref({});
-
-const checkGeoIP = async () => {
-  loading.value = true;
-  try {
-    const response = await axios.get(`https://ipapi.co/${inputIP.value}/json/`);
-    geoIP.value = response.data;
-  } catch (error) {
-    console.error("Error fetching GeoIP information:", error);
-    geoIP.value = {};
-  } finally {
-    loading.value = false;
-  }
-};
-</script>
-
-<style scoped></style>
+<style scoped lang="scss">
+@import "@/assets/stylesheet/style";
+</style>

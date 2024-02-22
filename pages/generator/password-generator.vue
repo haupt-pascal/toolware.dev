@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 
-const passwordLength = ref(8);
+const passwordLength = ref(24);
 const password = ref("");
 const includeUppercase = ref(true);
 const includeLowercase = ref(true);
@@ -66,10 +66,11 @@ const refreshValue = (value: string) => {
       </div>
       <input
         type="number"
-        max="100"
+        max="1024"
         min="1"
         v-model="passwordLength"
         placeholder="Type here the length of the password between 1 and 100"
+        @keyup.enter="generatePassword"
       />
       <button @click="generatePassword">Generate</button>
       <div class="result-container" v-if="password !== null && password !== ''">
@@ -92,6 +93,6 @@ const refreshValue = (value: string) => {
     <Footer />
   </div>
 </template>
-<style lang="scss">
+<style scoped lang="scss">
 @import "@/assets/stylesheet/style";
 </style>

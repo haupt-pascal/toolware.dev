@@ -1,38 +1,3 @@
-<template>
-  <div class="app">
-    <Navigation />
-    <h1>SSL-Checker</h1>
-    <div class="input-container">
-      <span class="disclaimer">
-        This tool checks the SSL certificate of the given domain. It uses the
-        <a href="https://certspotter.com/" target="_blank">Cert Spotter API</a>
-        to check the certificate.
-      </span>
-      <input
-        v-model="websiteURL"
-        type="text"
-        placeholder="Type here your domain to check - e.g. haupt.design"
-        @keydown.enter="clearAndCheckSSL"
-      />
-      <button @click="clearAndCheckSSL">Check</button>
-
-      <div class="result-container">
-        <h2>Result:</h2>
-        <p v-if="!loading">{{ sslStatus }}</p>
-        <div v-if="validFrom && validUntil && !loading">
-          <p>Valid from: {{ validFrom }}</p>
-          <p>Valid until: {{ validUntil }}</p>
-        </div>
-        <div v-if="loading">
-          <p>Loading...</p>
-          <!-- Hier kannst du eine Ladebalken-Komponente einfügen -->
-        </div>
-      </div>
-    </div>
-    <Footer />
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from "vue";
 
@@ -40,7 +5,6 @@ const websiteURL = ref("");
 const sslStatus = ref("");
 const validFrom = ref("");
 const validUntil = ref("");
-const loading = ref(false);
 
 const clearAndCheckSSL = () => {
   sslStatus.value = "";
@@ -50,7 +14,6 @@ const clearAndCheckSSL = () => {
 };
 
 const checkSSL = async () => {
-  loading.value = true; // Ladebalken anzeigen
   try {
     const response = await fetch(
       `https://api.certspotter.com/v1/issuances?domain=${websiteURL.value}`
@@ -84,12 +47,40 @@ const checkSSL = async () => {
       error
     );
     sslStatus.value = "Error while checking SSL certificate.";
-  } finally {
-    loading.value = false;
   }
 };
 </script>
+<template>
+  <div class="app">
+    <Navigation />
+    <h1>SSL-Checker</h1>
+    <div class="input-container">
+      <span class="disclaimer">
+        This tool checks the SSL certificate of the given domain. It uses the
+        <a href="https://certspotter.com/" target="_blank">Cert Spotter API</a>
+        to check the certificate.
+      </span>
+      <input
+        v-model="websiteURL"
+        type="text"
+        placeholder="Type here your domain to check - e.g. haupt.design"
+        @keydown.enter="clearAndCheckSSL"
+      />
+      <button @click="clearAndCheckSSL">Check</button>
 
-<style lang="scss">
+      <div class="result-container" v-if="sslStatus !== '' && sslStatus !== null">
+        <h2>Result:</h2>
+        <div class="result">
+          <div v-if="validFrom && validUntil">
+          <p>Valid from: {{ validFrom }}</p>
+          <p>Valid until: {{ validUntil }}</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </div>
+</template>
+<style scoped lang="scss">
 @import "@/assets/stylesheet/style";
 </style>

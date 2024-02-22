@@ -47,11 +47,11 @@ h2 {
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 22px;
   font-family: "Poppins", sans-serif;
   width: 75%;
   text-align: center;
@@ -139,7 +139,7 @@ p {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   h3 {
@@ -326,7 +326,6 @@ p {
     min-height: 80vh;
 
     h2 {
-      font-size: 24px;
       font-family: "Along Sans s2", sans-serif;
     }
   }
@@ -347,7 +346,6 @@ p {
       padding: 20px 10px;
 
       h2 {
-        font-size: 32px;
         font-weight: 500;
         padding: 0 28px;
         margin-bottom: 40px;
@@ -411,7 +409,6 @@ p {
   border-radius: 20px;
 
   h2 {
-    font-size: 28px;
     text-align: left;
 
     b {
@@ -640,11 +637,6 @@ div.app {
     width: 70%;
     .input-container {
       width: 90%;
-    }
-  }
-  .result {
-    h2 {
-      font-size: 22px;
     }
   }
   .hero {

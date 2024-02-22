@@ -1,3 +1,30 @@
+<script setup>
+import { ref, watch } from "vue";
+
+const inputURL = ref("");
+const result = ref("");
+
+const checkSPF = async () => {
+  if (inputURL.value) {
+    try {
+      const response = await useFetch("/api/spf", {
+        query: {
+          url: inputURL.value,
+        },
+      });
+      const data = response.data;
+      result.value = data || "No SPF record found.";
+    } catch (error) {
+      console.error("Error fetching SPF record:", error);
+      result.value = "Error fetching SPF record.";
+    } finally {
+      loading.value = false;
+    }
+  } else {
+    result.value = "Please enter a domain.";
+  }
+};
+</script>
 <template>
   <div class="app">
     <Navigation />
@@ -7,15 +34,16 @@
         type="text"
         placeholder="Type here your domain to check - e.g. haupt.design"
         v-model="inputURL"
-        @keyup.enter="handleEnterKey"
+        @keyup.enter="checkSPF"
       />
       <button @click="checkSPF">Check SPF</button>
-      <div class="result-container">
+      <div class="result-container" v-if="result !== '' && result !== null">
         <h2>Result:</h2>
-        <p v-if="loading">Loading...</p>
-        <p v-if="result">
-          The SPF record is:<b>{{ result }}</b>
-        </p>
+        <div class="result">
+          <span v-if="result">
+            The SPF record is:<b>{{ result }}</b>
+          </span>
+        </div>
       </div>
     </div>
     <div class="input-container info-container">
@@ -68,50 +96,4 @@
     <Footer />
   </div>
 </template>
-
-<script setup>
-import { ref, watch } from "vue";
-
-const inputURL = ref("");
-const loading = ref(false);
-const result = ref("");
-
-const checkSPF = async () => {
-  if (inputURL.value) {
-    loading.value = true;
-    try {
-      const response = await useFetch("/api/spf", {
-        query: {
-          url: inputURL.value,
-        },
-      });
-      const data = response.data;
-      result.value = data || "No SPF record found.";
-    } catch (error) {
-      console.error("Error fetching SPF record:", error);
-      result.value = "Error fetching SPF record.";
-    } finally {
-      loading.value = false;
-    }
-  } else {
-    result.value = "Please enter a domain.";
-  }
-};
-
-const handleEnterKey = () => {
-  if (inputURL.value.trim() !== "") {
-    checkSPF();
-  }
-};
-
-watch(
-  () => inputURL.value,
-  () => {
-    if (event.key === "Enter") {
-      handleEnterKey();
-    }
-  }
-);
-</script>
-
 <style scoped></style>

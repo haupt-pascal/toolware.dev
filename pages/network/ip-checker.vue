@@ -37,7 +37,6 @@ onMounted(() => {
   fetchIPv6();
 });
 </script>
-
 <template>
   <div class="app">
     <Navigation />
@@ -60,7 +59,6 @@ onMounted(() => {
     <Footer />
   </div>
 </template>
-
-<style lang="scss">
+<style scoped lang="scss">
 @import "@/assets/stylesheet/style";
 </style>

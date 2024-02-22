@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 
-const wordCounter = ref("");
+const wordCounter = ref();
 const ipsum = ref("");
 
 const generateIpsum = () => {
@@ -48,6 +48,7 @@ const refreshValue = (value: string) => {
         min="1"
         v-model="wordCounter"
         placeholder="Type here the number of words between 1 and 1000"
+        @keyup.enter="generateIpsum"
       />
       <button @click="generateIpsum">Generate</button>
       <div class="result-container" v-if="ipsum !== null && ipsum !== ''">
@@ -66,6 +67,6 @@ const refreshValue = (value: string) => {
     <Footer />
   </div>
 </template>
-<style lang="scss">
+<style scoped lang="scss">
 @import "@/assets/stylesheet/style";
 </style>

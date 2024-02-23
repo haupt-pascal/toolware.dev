@@ -5,7 +5,7 @@ import { networkNavbarItems, encoderNavbarItems, generatorNavbarItems } from '@/
 <template>
   <nav class="sidebar">
     <div class="sidebar-logo">
-      <img src="" alt="" />
+      <img src="@/assets/images/toolware2-03.png" alt="logo" />
     </div>
     <div class="sidebar-menu">
       <div class="sidebar-menu-category">

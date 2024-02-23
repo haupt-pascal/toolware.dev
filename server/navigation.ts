@@ -30,12 +30,7 @@ const generatorNavbarItems = ref<generatorNavbarItem[]>([
     link: "/generator/password-generator",
   },
   {
-    icon: "ph:file",
-    title: "UUID-Gen",
-    link: "/generator/uuid-generator",
-  },
-  {
-    icon: "ph:file",
+    icon: "ph:export",
     title: "Random-Port-Gen",
     link: "/generator/random-port-generator",
   },

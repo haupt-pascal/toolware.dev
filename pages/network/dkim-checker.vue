@@ -33,6 +33,7 @@ watch(
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>DKIM Checker</h1>
     <div class="input-container">
       <input

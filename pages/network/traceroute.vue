@@ -2,14 +2,14 @@
 import { ref } from "vue";
 
 const inputURL = ref("");
-const result = ref(null);
+const result = ref("");
 const loading = ref(false);
 
-const onlinePing = async () => {
+const traceroute = async () => {
   if (inputURL.value) {
     loading.value = true;
     try {
-      const response = await useFetch("/api/ping", {
+      const response = await useFetch("/api/traceroute", {
         query: {
           url: inputURL.value,
         },
@@ -17,7 +17,7 @@ const onlinePing = async () => {
       const data = response.data;
       result.value = data.value || "";
     } catch (error) {
-      result.value = "Error executing the ping.";
+      result.value = "Error executing the traceroute.";
     } finally {
       loading.value = false;
     }
@@ -28,21 +28,24 @@ const onlinePing = async () => {
   <div class="app">
     <Navigation />
     <Navbar />
-    <h1>Online Ping</h1>
+    <h1>Traceroute</h1>
     <div class="input-container">
       <input
         type="text"
         placeholder="Type here your domain to check - e.g. haupt.design"
         v-model="inputURL"
-        @keyup.enter="onlinePing"
+        @keyup.enter="traceroute"
       />
-      <button @click="onlinePing">Online Ping</button>
-      <div class="result-container" v-if="result !== null && result !== ''">
+      <button @click="traceroute">Traceroute</button>
+      <div
+        class="result-container"
+        v-if="!loading && result !== null && result !== ''"
+      >
         <h2>Result:</h2>
         <div class="result">
-          <p>
+          <span>
             <b v-for="value in result">{{ value }}<br /></b>
-          </p>
+          </span>
         </div>
       </div>
       <div class="loading-animation" v-if="loading">
@@ -50,7 +53,6 @@ const onlinePing = async () => {
         <div></div>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 <style scoped lang="scss">

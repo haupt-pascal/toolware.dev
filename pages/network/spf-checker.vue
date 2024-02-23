@@ -28,6 +28,7 @@ const checkSPF = async () => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>SPF Checker</h1>
     <div class="input-container">
       <input

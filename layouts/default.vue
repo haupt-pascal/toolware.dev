@@ -5,7 +5,7 @@ import { networkNavbarItems, encoderNavbarItems } from '@/server/navigation'
 </script>
 <template>
   <Navigation />
-
+  <Navbar />
   <div class="hero">
     <h1><span class="primary-color">Toolware</span>: your systems wingman.</h1>
 

@@ -28,6 +28,7 @@ const checkDMARC = async () => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>DMARC Checker</h1>
     <div class="input-container">
       <input

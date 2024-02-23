@@ -44,6 +44,7 @@ const refreshValue = (value: string) => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>Password Generator</h1>
     <div class="input-container">
       <div class="options-container">

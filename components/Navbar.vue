@@ -13,7 +13,7 @@
                 <a href="https://twitter.com/haupt_pascal" target="_blank">
                     <Icon name="ph:twitter-logo" color="white" />
                 </a>
-                <a href="" class="navbar-right-icons-button">
+                <a href="https://www.buymeacoffee.com/hauptpascal" class="navbar-right-icons-button">
                     Buy me a coffee &nbsp;
                     <Icon name="ph:coffee" color="black" />
                 </a>

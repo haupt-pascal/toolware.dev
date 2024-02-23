@@ -1,6 +1,7 @@
 <template>
     <div class="app">
         <Navigation />
+        <Navbar />
         <div class="legal">
             <h1>Impressum</h1>
 

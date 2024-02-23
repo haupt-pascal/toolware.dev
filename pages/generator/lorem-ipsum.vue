@@ -40,6 +40,7 @@ const refreshValue = (value: string) => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>Lorem Ipsum Generator</h1>
     <div class="input-container">
       <input

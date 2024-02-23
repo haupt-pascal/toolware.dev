@@ -28,6 +28,7 @@ const checkRedirects = async () => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>Redirect Checker</h1>
     <div class="input-container">
       <input

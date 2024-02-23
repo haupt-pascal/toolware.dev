@@ -25,6 +25,7 @@ const refreshValue = (value: string) => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>Base64-Encoder</h1>
     <div class="input-container">
       <input

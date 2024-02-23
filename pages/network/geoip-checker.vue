@@ -20,6 +20,7 @@ console.log(geoIP.value);
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>GeoIP Checker</h1>
     <div class="input-container">
       <span class="disclaimer">

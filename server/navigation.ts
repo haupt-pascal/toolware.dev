@@ -76,6 +76,11 @@ const networkNavbarItems = ref<networkNavbarItem[]>([
     icon: "ph:question",
     title: "Online Ping",
     link: "/network/online-ping",
+  },
+  {
+    icon: "ph:question",
+    title: "Traceroute",
+    link: "/network/traceroute",
   }
 ]);
 

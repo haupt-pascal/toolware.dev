@@ -1,6 +1,7 @@
 <template>
     <div class="app">
       <Navigation />
+      <Navbar />
       <div class="legal">
         <h1>Datenschutz&shy;erkl&auml;rung</h1>
         <h2>1. Datenschutz auf einen Blick</h2>

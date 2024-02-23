@@ -24,6 +24,7 @@ generateRandomPort();
 <template>
     <div class="app">
         <Navigation />
+        <Navbar />
         <h1>Port Generator</h1>
         <div class="input-container">
             <div class="result-container" v-if="randomPort !== null && randomPort !== 0">

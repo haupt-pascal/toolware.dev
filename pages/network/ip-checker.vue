@@ -40,6 +40,7 @@ onMounted(() => {
 <template>
   <div class="app">
     <Navigation />
+    <Navbar />
     <h1>IP-Checker</h1>
     <div class="input-container">
       <span class="disclaimer">

@@ -582,7 +582,6 @@ div.app {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
       padding: 32px;
       border-radius: 15px;
       background: $secondary;
@@ -592,7 +591,6 @@ div.app {
       transition: 0.3s;
       resize: none;
       word-wrap: break-word;
-
       span {
         width: 100%;
       }
@@ -624,6 +622,42 @@ div.app {
       font-size: 16px;
       margin: 0 10px;
     }
+  }
+}
+
+.loading-animation {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-top: 48px;
+}
+
+.loading-animation div {
+  position: absolute;
+  border: 4px solid $primary;
+  opacity: 1;
+  border-radius: 50%;
+  animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.loading-animation div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes loading {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
   }
 }
 

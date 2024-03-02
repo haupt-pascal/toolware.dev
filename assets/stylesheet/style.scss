@@ -313,6 +313,7 @@ p {
   //background: linear-gradient(352deg, rgba(31,31,36,1) 0%, rgba(51,52,57,1) 100%); 
   background: $secondary;
   position: fixed;
+  overflow-y: scroll;
   top: 10px;
   left: 10px;
   border-radius: 10px;
@@ -606,7 +607,7 @@ div.app {
 }
 
 .footer {
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-top: 200px;
   display: flex;

@@ -689,6 +689,11 @@ div.app {
   div.app {
     width: 90%;
   }
+  .footer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (max-width: 1928px) {
@@ -697,6 +702,11 @@ div.app {
     .container-row {
       grid-template-columns: repeat(5, 1fr);
     }
+  }
+  .footer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -710,6 +720,10 @@ div.app {
   div.hero {
     margin-left: 20%;
     width: 80%;
+  }
+  .footer {
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
@@ -825,6 +839,7 @@ div.app {
 
   div.app {
     width: 100%;
+    margin: 0 auto;
 
     .input-container {
       width: 100%;

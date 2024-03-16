@@ -53,6 +53,7 @@ const traceroute = async () => {
         <div></div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 <style scoped lang="scss">

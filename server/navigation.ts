@@ -84,11 +84,13 @@ const networkNavbarItems = ref<networkNavbarItem[]>([
     title: "Online Ping",
     link: "/network/online-ping",
   },
+  /*
   {
     icon: "ph:question",
     title: "Traceroute",
     link: "/network/traceroute",
   }
+  */
 ]);
 
 const encoderNavbarItems = ref<encoderNavbarItem[]>([

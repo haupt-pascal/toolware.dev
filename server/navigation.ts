@@ -18,6 +18,13 @@ type generatorNavbarItem = {
   link: string;
 };
 
+type navbarItems = {
+  category: string;
+  icon: string;
+  title: string;
+  link: string;
+}
+
 const generatorNavbarItems = ref<generatorNavbarItem[]>([
   {
     icon: "ph:exam",

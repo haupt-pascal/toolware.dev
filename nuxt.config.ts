@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default ({
+export default {
   devtools: { enabled: true },
   app: {
     head: {
@@ -11,6 +11,14 @@ export default ({
     },
   },
 
-  serverMiddleware: [{ path: "/api/curl", handler: "~/server/api/curl.ts" }],
-  modules: ['nuxt-icon'],
-});
+  serverMiddleware: [
+    { path: "/api/curl", handler: "~/server/api/curl.ts" },
+    { path: "/api/abuse-ip", handler: "~/server/api/abuse-ip.ts" },
+  ],
+  modules: ["nuxt-icon"],
+  runtimeConfig: {
+    public: {
+      abuse: process.env.ABUSE_IP_DB,
+    }
+  }
+};

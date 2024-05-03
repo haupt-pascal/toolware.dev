@@ -1,19 +1,19 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 const inputIP = ref("");
 const result = ref(null);
 
 const checkIP = async () => {
   try {
-    const response = await axios.get('/api/abuse-ip', { 
+    const response = await axios.get("/api/abuse-ip", {
       params: {
         ipAddress: inputIP.value,
         maxAgeInDays: 30,
-        verbose: true
-      }
+        verbose: true,
+      },
     });
     result.value = response.data.data; // Hier ändern wir die Zuweisung, um auf die Daten zuzugreifen
   } catch (error) {
@@ -22,50 +22,69 @@ const checkIP = async () => {
   }
 };
 
-console.log(result.value);
+const scoreColor = (score) => {
+  if (score < 30) {
+    return "#7DB828";
+  } else if (score >= 30 && score <= 60) {
+    return "yellow";
+  } else {
+    return "red";
+  }
+};
 </script>
 <template>
-    <div>
-        <h1>Check IP</h1>
-        <input v-model="inputIP" type="text" placeholder="Enter IP" />
-        <button @click="checkIP">Check</button>
-        <div v-if="result">
+  <div class="app">
+    <Navigation />
+    <Navbar />
+    <h1>Check IP</h1>
+    <div class="input-container">
+      <input
+        v-model="inputIP"
+        type="text"
+        placeholder="IP Address here... e.g. 8.8.8.8"
+      />
+      <button @click="checkIP">Check</button>
+      <div class="result-container" v-if="result !== '' && result !== null">
+        <div class="result" v-if="result">
           <h2>AbuseIPDB Report</h2>
-          <div>
-            <strong>IP Address:</strong> {{ result.ipAddress }}
-          </div>
-          <div>
-            <strong>ISP:</strong> {{ result.isp }}
-          </div>
-          <div>
-            <strong>Country:</strong> {{ result.countryName }} ({{ result.countryCode }})
-          </div>
-          <div>
-            <strong>Confidence Score:</strong> {{ result.abuseConfidenceScore }}
-          </div>
-          <div>
-            <strong>Total Reports:</strong> {{ result.totalReports }}
-          </div>
-          <div>
+          <span><strong>IP Address:</strong> {{ result.ipAddress }}</span>
+          <span><strong>ISP:</strong> {{ result.isp }}</span>
+          <span>
+            <strong>Country:</strong> {{ result.countryName }} ({{
+              result.countryCode
+            }})
+          </span>
+          <span>
+            <strong>Spam Score: </strong>
+            <span :style="{ color: scoreColor(result.abuseConfidenceScore) }">
+              {{ result.abuseConfidenceScore }}%
+            </span>
+          </span>
+
+          <span><strong>Total Reports:</strong> {{ result.totalReports }}</span>
+          <span>
             <strong>Last Reported At:</strong> {{ result.lastReportedAt }}
-          </div>
+          </span>
           <h3>Reports:</h3>
-          <ul>
-            <li v-for="(report, index) in result.reports" :key="index">
-              <div>
-                <strong>Reported At:</strong> {{ report.reportedAt }}
-              </div>
-              <div>
-                <strong>Comment:</strong> {{ report.comment }}
-              </div>
-              <div>
-                <strong>Reporter:</strong> {{ report.reporterCountryName }} ({{ report.reporterCountryCode }})
-              </div>
-            </li>
-          </ul>
+          <span v-for="(report, index) in result.reports" :key="index">
+            <span><strong>Reported At:</strong> {{ report.reportedAt }}</span
+            ><br />
+            <span><strong>Comment:</strong> {{ report.comment }}</span>
+            <span
+              ><br />
+              <strong>Reporter:</strong> {{ report.reporterCountryName }} ({{
+                report.reporterCountryCode
+              }})
+            </span>
+            <br />
+            <br />
+          </span>
         </div>
-        <div v-else>
-          No data available
-        </div>
+      </div>
     </div>
+    <Footer />
+  </div>
 </template>
+<style scoped lang="scss">
+@import "@/assets/stylesheet/style";
+</style>

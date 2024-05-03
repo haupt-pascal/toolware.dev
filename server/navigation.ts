@@ -55,6 +55,11 @@ const networkNavbarItems = ref<networkNavbarItem[]>([
     link: "/network/geoip-checker",
   },
   {
+    icon: "ph:smiley-x-eyes",
+    title: "AbuseIP-Checker",
+    link: "/network/abuseip-checker",
+  },
+  {
     icon: "ph:key",
     title: "SPF-Checker",
     link: "/network/spf-checker",

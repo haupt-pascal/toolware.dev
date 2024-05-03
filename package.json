@@ -11,16 +11,14 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.8.1",
-    "nuxt-icon": "^0.6.8",
-    "sass": "^1.69.5",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "nuxt": "^3.11.2",
+    "nuxt-icon": "^0.6.10",
+    "sass": "^1.76.0",
+    "vue": "^3.4.26",
+    "vue-router": "^4.3.2"
   },
   "dependencies": {
-    "abuseipdb-client": "^0.1.129",
-    "abuseipdb-node-client": "^0.2.1",
-    "axios": "^1.6.2",
+    "axios": "^1.6.8",
     "child_process": "^1.0.2"
   }
 }

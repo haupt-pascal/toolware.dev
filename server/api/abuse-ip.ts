@@ -4,6 +4,8 @@ import { defineEventHandler, getQuery } from 'h3';
 const config = useRuntimeConfig();
 const API_KEY = config.public.abuse;
 
+console.log('API_KEY:', API_KEY);
+
 export default defineEventHandler(async (process) => {
   const query = getQuery(process);
   const ipAddress = query.ipAddress as string;

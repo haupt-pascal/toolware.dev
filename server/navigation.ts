@@ -57,7 +57,7 @@ const networkNavbarItems = ref<networkNavbarItem[]>([
   {
     icon: "ph:smiley-x-eyes",
     title: "AbuseIP-Checker",
-    link: "/network/abuseip-checker",
+    link: "/network/abuse-ip",
   },
   {
     icon: "ph:key",

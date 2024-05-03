@@ -2,9 +2,8 @@ import axios from 'axios';
 import { defineEventHandler, getQuery } from 'h3';
 
 const config = useRuntimeConfig();
-const API_KEY = config.public.abuse;
-
-console.log('API_KEY:', API_KEY);
+//const API_KEY = config.public.abuse;
+const API_KEY = process.env.ABUSE_IP_DB;
 
 export default defineEventHandler(async (process) => {
   const query = getQuery(process);

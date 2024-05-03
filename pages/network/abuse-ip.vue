@@ -15,7 +15,7 @@ const checkIP = async () => {
         verbose: true,
       },
     });
-    result.value = response.data.data; // Hier ändern wir die Zuweisung, um auf die Daten zuzugreifen
+    result.value = response.data.data;
   } catch (error) {
     console.error("Error fetching IP information:", error);
     result.value = null;

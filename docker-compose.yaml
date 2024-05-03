@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  toolware:
+    build: .
+    container_name: toolware
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env
+    environment:
+      ABUSE_IP_DB: ${ABUSE_IP_DB}

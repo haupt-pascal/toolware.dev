@@ -85,9 +85,12 @@ const checkIP = async () => {
 <style scoped lang="scss">
 @import "@/assets/stylesheet/style";
 
+// custom
+
 .ul__nonleft {
     padding-left: 0;
 }
+
 
 .result {
     align-items: flex-start !important;

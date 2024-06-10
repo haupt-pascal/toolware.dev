@@ -60,6 +60,11 @@ const networkNavbarItems = ref<networkNavbarItem[]>([
     link: "/network/abuse-ip",
   },
   {
+    icon: "ph:smiley-x-eyes",
+    title: "DNSBL-Checker",
+    link: "/network/dnsbl-check",
+  },
+  {
     icon: "ph:key",
     title: "SPF-Checker",
     link: "/network/spf-checker",

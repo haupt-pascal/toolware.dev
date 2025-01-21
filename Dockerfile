@@ -1,4 +1,4 @@
-ARG NODE_IMAGE=node:18-alpine3.17
+ARG NODE_IMAGE=node:22-alpine
 #ARG NODE_IMAGE=node:18.4.0-bullseye-slim
 
 FROM $NODE_IMAGE as dependencies

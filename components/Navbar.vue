@@ -10,7 +10,7 @@
                 <a href="https://github.com/haupt-pascal/toolware.dev" target="_blank">
                     <Icon name="ph:github-logo" color="white" />
                 </a>
-                <a href="https://twitter.com/haupt_pascal" target="_blank">
+                <a href="https://twitter.com/pascal_haupt24" target="_blank">
                     <Icon name="ph:twitter-logo" color="white" />
                 </a>
                 <a href="https://www.buymeacoffee.com/hauptpascal" class="navbar-right-icons-button">

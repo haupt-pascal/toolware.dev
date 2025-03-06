@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default {
   devtools: { enabled: true },
+
   app: {
     head: {
       title: "Toolware.dev",
@@ -15,10 +16,14 @@ export default {
     { path: "/api/curl", handler: "~/server/api/curl.ts" },
     { path: "/api/abuse-ip", handler: "~/server/api/abuse-ip.ts" },
   ],
+
   modules: ["nuxt-icon"],
+
   runtimeConfig: {
     public: {
       abuse: process.env.ABUSE_IP_DB,
     }
-  }
+  },
+
+  compatibilityDate: "2025-03-06"
 };

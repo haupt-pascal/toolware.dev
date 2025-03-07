@@ -1,11 +1,19 @@
 <script lang="ts" setup>
-import {networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems} from '@/server/navigation'
+import {
+  networkNavbarItems,
+  encoderNavbarItems,
+  generatorNavbarItems,
+  developmentNavbarItems,
+  dnsNavbarItem
+} from '@/server/navigation'
 
 </script>
 <template>
   <nav class="sidebar">
     <div class="sidebar-logo">
+      <a href="/">
       <img src="@/assets/images/toolware2-03.png" alt="logo" />
+      </a>
     </div>
     <div class="sidebar-menu">
       <div class="sidebar-menu-category">
@@ -39,6 +47,15 @@ import {networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmen
         <span class="sidebar-menu-category-title"> development </span>
         <ul class="sidebar-menu-list">
           <li class="sidebar-menu-item" v-for="item in developmentNavbarItems" :key="item.title">
+            <Icon :name="item.icon" color="white" />
+            <a :href="item.link">{{ item.title }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-menu-category">
+        <span class="sidebar-menu-category-title"> dns </span>
+        <ul class="sidebar-menu-list">
+          <li class="sidebar-menu-item" v-for="item in dnsNavbarItem" :key="item.title">
             <Icon :name="item.icon" color="white" />
             <a :href="item.link">{{ item.title }}</a>
           </li>

@@ -7,7 +7,7 @@
         </div>
         <div class="navbar-right">
             <div class="navbar-right-icons">
-                <a href="https://github.com/haupt-pascal/toolware.dev" target="_blank">
+                <a href="https://github.com/haupt-pascal/toolware.dev" target="_bank">
                     <Icon name="ph:github-logo" color="white" />
                 </a>
                 <a href="https://twitter.com/pascal_haupt24" target="_blank">

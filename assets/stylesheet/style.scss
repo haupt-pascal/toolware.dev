@@ -486,7 +486,6 @@ div.app {
   //box-shadow: 0px 10px 33px 11px rgba(0,0,0,0.1);
 
   .options-container {
-    width: 60%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -497,6 +496,41 @@ div.app {
       display: flex;
       align-items: center;
       width: 90%;
+
+      input {
+        width: 10%;
+      }
+    }
+  }
+
+  .options-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+
+    label {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+
+  .options-chmod {
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7vw;
+
+    label {
+      display: flex;
+      align-items: center;
+      width: 100%;
 
       input {
         width: 10%;
@@ -724,6 +758,11 @@ div.app {
     width: 80%;
     margin: 0 auto;
   }
+
+  .options-chmod {
+    margin-left: 10vw;
+  }
+
 }
 
 @media only screen and (max-width: 1428px) {
@@ -738,6 +777,10 @@ div.app {
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  .options-chmod {
+    margin-left: 10vw;
+  }
 }
 
 @media only screen and (max-width: 1228px) {
@@ -749,6 +792,9 @@ div.app {
     margin-left: 30%;
     .input-container {
       width: 90%;
+    }
+    .options-group {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
   div.hero {
@@ -816,6 +862,7 @@ div.app {
       }
     }
   }
+
 }
 
 /* Responsive Sidebar

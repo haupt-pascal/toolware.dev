@@ -41,6 +41,11 @@ const generatorNavbarItems = ref<generatorNavbarItem[]>([
     title: "Random-Port-Gen",
     link: "/generator/random-port-generator",
   },
+  {
+    icon:"ph:key",
+    title: "Chmod-Gen",
+    link:"/generator/chmod-generator"
+  }
 ]);
 
 const networkNavbarItems = ref<networkNavbarItem[]>([

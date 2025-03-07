@@ -432,7 +432,6 @@ p {
       border-radius: 20px;
       text-align: center;
       padding: 20px 10px;
-      text-align: center;
 
       h3 {
         margin: 0 auto;
@@ -570,7 +569,7 @@ div.app {
     }
   }
 
-  input {
+  input, textarea {
     width: calc(80% - 40px);
     padding: 10px 20px;
     border-radius: 15px;
@@ -588,6 +587,11 @@ div.app {
     &:focus {
       border: 1px solid $primary;
     }
+  }
+
+  textarea {
+    height: 200px;
+    resize: vertical;
   }
 
   button {

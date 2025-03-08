@@ -165,6 +165,11 @@ const systemNavbarItem = ref<systemNavbarItem[]>([
     icon: "ph:wrench",
     title: "Cronjob Scheduler",
     link: "/system/cronjob-scheduler",
+  },
+  {
+    icon: "ph:magnifying-glass",
+    title: "MAC-Lookup",
+    link: "/system/mac-lookup",
   }
 ])
 

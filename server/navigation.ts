@@ -60,6 +60,11 @@ const developmentNavbarItems = ref<developmentNavbarItem[]>([
     title: "JSON Validator",
     link: "/development/json-validator",
   },
+  {
+    icon: "ph:file",
+    title: "XML Validator",
+    link: "/development/xml-validator",
+  }
 ]);
 
 const networkNavbarItems = ref<networkNavbarItem[]>([

@@ -18,6 +18,12 @@ type generatorNavbarItem = {
   link: string;
 };
 
+type developmentNavbarItem = {
+    icon: string;
+    title: string;
+    link: string;
+}
+
 type navbarItems = {
   category: string;
   icon: string;
@@ -46,6 +52,14 @@ const generatorNavbarItems = ref<generatorNavbarItem[]>([
     title: "Chmod-Gen",
     link:"/generator/chmod-generator"
   }
+]);
+
+const developmentNavbarItems = ref<developmentNavbarItem[]>([
+  {
+    icon: "ph:file",
+    title: "JSON Validator",
+    link: "/development/json-validator",
+  },
 ]);
 
 const networkNavbarItems = ref<networkNavbarItem[]>([
@@ -121,4 +135,4 @@ const encoderNavbarItems = ref<encoderNavbarItem[]>([
   },
 ]);
 
-export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems };
+export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems };

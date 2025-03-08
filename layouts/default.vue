@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { networkNavbarItems, encoderNavbarItems, generatorNavbarItems } from '@/server/navigation'
+import {networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems} from '@/server/navigation'
 
 </script>
 <template>
@@ -38,6 +38,20 @@ import { networkNavbarItems, encoderNavbarItems, generatorNavbarItems } from '@/
     </span>
     <div class="container-row">
       <div class="container" v-for="item in generatorNavbarItems" :key="item.title">
+        <h2>
+          {{ item.title }}
+        </h2>
+        <a :href="item.link">Click here</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <span class="category">
+      Development Tools
+    </span>
+    <div class="container-row">
+      <div class="container" v-for="item in developmentNavbarItems" :key="item.title">
         <h2>
           {{ item.title }}
         </h2>

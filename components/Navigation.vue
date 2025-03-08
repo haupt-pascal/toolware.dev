@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { networkNavbarItems, encoderNavbarItems, generatorNavbarItems } from '@/server/navigation'
+import {networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems} from '@/server/navigation'
 
 </script>
 <template>
@@ -30,6 +30,15 @@ import { networkNavbarItems, encoderNavbarItems, generatorNavbarItems } from '@/
         <span class="sidebar-menu-category-title"> generator </span>
         <ul class="sidebar-menu-list">
           <li class="sidebar-menu-item" v-for="item in generatorNavbarItems" :key="item.title">
+            <Icon :name="item.icon" color="white" />
+            <a :href="item.link">{{ item.title }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-menu-category">
+        <span class="sidebar-menu-category-title"> development </span>
+        <ul class="sidebar-menu-list">
+          <li class="sidebar-menu-item" v-for="item in developmentNavbarItems" :key="item.title">
             <Icon :name="item.icon" color="white" />
             <a :href="item.link">{{ item.title }}</a>
           </li>

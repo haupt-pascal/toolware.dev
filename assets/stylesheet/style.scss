@@ -130,6 +130,81 @@ p {
   }
 }
 
+.cron-editor {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.cron-toggle {
+  margin-bottom: 20px;
+  label {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.cron-fields {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media only screen and (max-width: 728px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+
+  .cron-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+    }
+  }
+}
+
+.reference-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  text-align: left;
+
+  @media only screen and (max-width: 728px) {
+    grid-template-columns: 1fr;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.command-input {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Responsive Variables Section
 ***************************************/
 
@@ -335,6 +410,7 @@ p {
   .sidebar-menu {
     .sidebar-menu-category {
       .sidebar-menu-category-title {
+
         font-size: 18px;
         font-weight: 500;
         opacity: .75;
@@ -365,8 +441,6 @@ p {
         }
       }
     }
-
-    overflow: scroll;
   }
 }
 
@@ -482,6 +556,24 @@ div.app {
   margin-top: 24px;
 }
 
+.cronjob-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 100%;
+
+  label {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    input {
+      margin: 0 10px;
+      width: 30%;
+    }
+  }
+}
 .input-container {
   //background: $secondary;
   padding: 32px;

@@ -6,6 +6,12 @@ type networkNavbarItem = {
   link: string;
 };
 
+type dnsNavbarItem = {
+    icon: string;
+    title: string;
+    link: string;
+}
+
 type encoderNavbarItem = {
   icon: string;
   title: string;
@@ -140,4 +146,12 @@ const encoderNavbarItems = ref<encoderNavbarItem[]>([
   },
 ]);
 
-export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems };
+const dnsNavbarItem = ref<dnsNavbarItem[]>([
+  {
+    icon: "ph:globe",
+    title: "DIG Online",
+    link: "/dns/dig-online",
+  },
+]);
+
+export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems, dnsNavbarItem};

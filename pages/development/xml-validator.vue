@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import {ref} from "vue";
 
 const xmlInput = ref('');
 const errorMessage = ref('');
@@ -29,18 +29,18 @@ const copyToClipboard = async (text: string): Promise<void> => {
 
 <template>
   <div class="app">
-    <Navigation />
-    <Navbar />
+    <Navigation/>
+    <Navbar/>
     <h1>JSON Validator</h1>
     <div class="input-container">
         <textarea
-            type="text"
-            placeholder="Enter XML here"
             v-model="xmlInput"
+            placeholder="Enter XML here"
+            type="text"
             @keyup.enter="validateXML"
         />
 
-      <div class="result-container" v-if="errorMessage !== null && errorMessage !== ''">
+      <div v-if="errorMessage !== null && errorMessage !== ''" class="result-container">
         <div class="result">
           <div v-if="errorMessage != '✅ Valid XML'">
             <h3 style="width: 100%; margin-top: 0;">❌ Error in XML found:</h3>
@@ -54,10 +54,10 @@ const copyToClipboard = async (text: string): Promise<void> => {
         </div>
       </div>
       <button @click="validateXML">Validate</button>
-      <Footer />
+      <Footer/>
     </div>
   </div>
 </template>
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/stylesheet/style";
 </style>

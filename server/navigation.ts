@@ -12,6 +12,12 @@ type dnsNavbarItem = {
     link: string;
 }
 
+type systemNavbarItem = {
+    icon: string;
+    title: string;
+    link: string;
+}
+
 type encoderNavbarItem = {
   icon: string;
   title: string;
@@ -154,4 +160,19 @@ const dnsNavbarItem = ref<dnsNavbarItem[]>([
   },
 ]);
 
-export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems, dnsNavbarItem};
+const systemNavbarItem = ref<systemNavbarItem[]>([
+  {
+    icon: "ph:wrench",
+    title: "Cronjob Scheduler",
+    link: "/system/cronjob-scheduler",
+  },
+  {
+    icon: "ph:magnifying-glass",
+    title: "MAC-Lookup",
+    link: "/system/mac-lookup",
+  }
+])
+
+
+
+export { networkNavbarItems, encoderNavbarItems, generatorNavbarItems, developmentNavbarItems, dnsNavbarItem, systemNavbarItem};

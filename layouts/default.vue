@@ -5,7 +5,7 @@ import {
   encoderNavbarItems,
   generatorNavbarItems,
   developmentNavbarItems,
-  dnsNavbarItem
+  dnsNavbarItem, systemNavbarItem
 } from '@/server/navigation'
 
 </script>
@@ -72,6 +72,20 @@ import {
     </span>
     <div class="container-row">
       <div class="container" v-for="item in dnsNavbarItem" :key="item.title">
+        <h2>
+          {{ item.title }}
+        </h2>
+        <a :href="item.link">Click here</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <span class="category">
+      System Tools
+    </span>
+    <div class="container-row">
+      <div class="container" v-for="item in systemNavbarItem" :key="item.title">
         <h2>
           {{ item.title }}
         </h2>
